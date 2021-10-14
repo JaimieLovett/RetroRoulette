@@ -1,2 +1,2 @@
-/// @desc Reset can_shoot
+/// @desc Set can shoot to true
 can_shoot = true;

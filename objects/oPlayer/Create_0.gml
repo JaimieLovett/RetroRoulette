@@ -1,8 +1,7 @@
-/// @desc Init variables
-rotate_speed = 5;
+max_speed = 3;
 acceleration = 0.2;
 deceleration = 0.02;
-max_speed = 3;
+velocity = 5;
 
 can_shoot = true;
-shoot_delay = 0.2;
+shoot_delay = 0.125;

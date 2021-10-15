@@ -1,1 +1,0 @@
-#macro GAME_TYPES load_asteroids

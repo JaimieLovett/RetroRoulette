@@ -5,3 +5,4 @@ velocity = 5;
 
 can_shoot = true;
 shoot_delay = 0.125;
+can_push_ball = true;

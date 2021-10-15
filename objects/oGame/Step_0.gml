@@ -1,14 +1,24 @@
 if (select_new_game) {
 	select_new_game = false
-	global.current_room = choose("space_invaders");
+	cleanup();
 	
-	switch(global.current_room) {
+	previous_room = global.current_game;
+	while (previous_room = global.current_game) {
+		global.current_game = choose("pong");	
+	}
+	
+	switch(global.current_game) {
 		case "asteroids":
-			setup_asteroids()
+			setup_asteroids();
 			break;
 		case "space_invaders":
-			setup_space_invaders()
+			setup_space_invaders();
+			break;
+		case "pong":
+			setup_pong();
 			break;
 		default: break;
 	}
 }
+
+script_execute(win_condition_script);

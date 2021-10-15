@@ -21,6 +21,7 @@
     {"id":{"name":"rStart","path":"rooms/rStart/rStart.yy",},"order":0,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
     {"id":{"name":"WinConditions","path":"scripts/WinConditions/WinConditions.yy",},"order":10,},
+    {"id":{"name":"fHUDTitle","path":"fonts/fHUDTitle/fHUDTitle.yy",},"order":0,},
     {"id":{"name":"sPlayerAsteroids","path":"sprites/sPlayerAsteroids/sPlayerAsteroids.yy",},"order":0,},
     {"id":{"name":"oBullet","path":"objects/oBullet/oBullet.yy",},"order":1,},
     {"id":{"name":"sSpaceInvader3","path":"sprites/sSpaceInvader3/sSpaceInvader3.yy",},"order":3,},

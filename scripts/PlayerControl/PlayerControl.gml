@@ -20,8 +20,8 @@ function player_control_asteroids() {
             repeat(8){
 				_bullet_angle = direction + (i * 45);
                 var _inst = instance_create_layer(
-					x + lengthdir_x(_sep,_bullet_angle),
-					y + lengthdir_y(_sep,_bullet_angle),
+					x + lengthdir_x(_sep, _bullet_angle),
+					y + lengthdir_y(_sep, _bullet_angle),
 					"Bullets",
 					oBullet,
 				);
@@ -49,7 +49,7 @@ function player_control_space_invaders() {
 	if (key_space && can_shoot) {
 		can_shoot = false;
 		alarm[0] = room_speed * shoot_delay;
-		var _inst = instance_create_layer(x, y, "Instances", oBullet);
+		var _inst = instance_create_layer(x, y, "Bullets", oBullet);
 		_inst.direction = 90;
 		_inst.speed = 12;
 	}

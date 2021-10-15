@@ -11,8 +11,9 @@ function setup_asteroids(){
 	
 	global.game_type = choose("destroy", "survive");
 	if (global.game_type == "destroy") {
+		global.timer = 10;
 		win_condition_script = win_condition_asteroids_1;
-		win_condition_string = "Destroy all asteroids";
+		global.win_condition_string = "DESTROY";
 		repeat(3) {
 			var xx = choose(
 				irandom_range(0, room_width*0.3),
@@ -28,8 +29,9 @@ function setup_asteroids(){
 		}
 	}
 	else if (global.game_type == "survive") {
+		global.timer = 5;
 		win_condition_script = win_condition_asteroids_2;
-		win_condition_string = "Survive for 10 seconds";
+		global.win_condition_string = "SURVIVE";
 		repeat(10) {
 			var xx = choose(
 				irandom_range(0, room_width*0.3),
@@ -44,7 +46,6 @@ function setup_asteroids(){
 			instance_create_layer(xx, yy, "Enemies", oAsteroid);
 		}
 	}
-
 }
 
 function setup_space_invaders() {
@@ -59,8 +60,9 @@ function setup_space_invaders() {
 	}
 	global.game_type = choose("destroy", "survive");
 	if (global.game_type == "destroy") {
+		global.timer = 10;
 		win_condition_script = win_condition_space_invaders_1;
-		win_condition_string = "Destroy all space invaders";
+		global.win_condition_string = "DESTROY";
 		var _x = 25;
 		var _sep = room_width / 12;
 		repeat (11) {
@@ -90,8 +92,9 @@ function setup_space_invaders() {
 		}
 	}
 	else if (global.game_type == "survive") {
+		global.timer = 5;
 		win_condition_script = win_condition_space_invaders_2;
-		win_condition_string = "Survive for 10 seconds";
+		global.win_condition_string = "SURVIVE";
 		var _x = 25;
 		var _sep = room_width / 12;
 		repeat (11) {
@@ -140,7 +143,7 @@ function setup_space_invaders() {
 	}
 }
 
-function setup_pong() {
+function setup_pong() {	
 	with (oPlayer) {
 		sprite_index = sPlayerPong;
 		x = 32;
@@ -149,8 +152,21 @@ function setup_pong() {
 		image_angle = 0;
 		velocity = 10;
 		
+	}
+	
+	
+	global.game_type = choose("score", "goalkeeper");
+	if (global.game_type == "score") {
+		global.timer = 10;
+		win_condition_script = win_condition_pong_1;
+		global.win_condition_string = "SCORE";
 		instance_create_layer(room_width - 32, room_height / 2, "Enemies", oPongPaddle);
-		instance_create_layer(room_width / 2, room_height / 2, "Enemies", oPongBall);
+		instance_create_layer(room_width / 2, room_height / 2, "Enemies", oPongBall);	
+	}
+	else if (global.game_type == "goalkeeper") {
+		global.timer = 10;
+		win_condition_script = win_condition_pong_2;
+		global.win_condition_string = "GOALKEEPER";
 	}
 }
 
@@ -175,3 +191,7 @@ function cleanup() {
 }
 
 #endregion
+
+function pause() {
+	
+}

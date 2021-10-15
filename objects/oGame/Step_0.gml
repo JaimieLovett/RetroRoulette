@@ -4,7 +4,7 @@ if (select_new_game) {
 	
 	previous_room = global.current_game;
 	while (previous_room = global.current_game) {
-		global.current_game = choose("pong");	
+		global.current_game = choose("asteroids", "pong", "space_invaders");
 	}
 	
 	switch(global.current_game) {
@@ -19,6 +19,12 @@ if (select_new_game) {
 			break;
 		default: break;
 	}
+	global.new_game_starting = true;
+	instance_deactivate_all(true);
+	if (alarm[2] == -1) alarm[2] = room_speed * global.game_starting_timer;
 }
 
-script_execute(win_condition_script);
+// If our game is past the starting stage, execute the win condition script.
+if (!global.new_game_starting) {
+	script_execute(win_condition_script);
+}

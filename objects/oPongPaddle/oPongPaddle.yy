@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sPlayerPong",
-    "path": "sprites/sPlayerPong/sPlayerPong.yy",
+    "name": "sEnemyPong",
+    "path": "sprites/sEnemyPong/sEnemyPong.yy",
   },
   "solid": false,
   "visible": true,

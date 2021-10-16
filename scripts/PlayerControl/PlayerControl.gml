@@ -12,7 +12,7 @@ function player_control_asteroids() {
 	if (key_space && can_shoot) {
 		can_shoot = false;
 		alarm[0] = room_speed * shoot_delay;
-		if (global.game_type == "destroy") {
+		if (oGame.current_game == "asteroids_destroy") {
 			var _sep = 7;
             var _bullet_angle;
             var i = 0;
@@ -49,9 +49,29 @@ function player_control_space_invaders() {
 	if (key_space && can_shoot) {
 		can_shoot = false;
 		alarm[0] = room_speed * shoot_delay;
-		var _inst = instance_create_layer(x, y, "Bullets", oBullet);
-		_inst.direction = 90;
-		_inst.speed = 12;
+		if (oGame.current_game == "space_invaders_destroy") {
+			var _sep = 2;
+            var _bullet_angle;
+            var i = 30;
+            
+            repeat(3){
+				_bullet_angle = 30 + i;
+                var _inst = instance_create_layer(
+					x + lengthdir_x(_sep, _bullet_angle),
+					y + lengthdir_y(_sep, _bullet_angle),
+					"Bullets",
+					oBullet,
+				);
+                _inst.direction = _bullet_angle;
+				_inst.speed = 12;
+				i += 30;
+            }	
+		}
+		else {
+			var _inst = instance_create_layer(x, y, "Bullets", oBullet);
+			_inst.direction = 90;
+			_inst.speed = 12;
+		}
 	}
 }
 

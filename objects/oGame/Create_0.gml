@@ -1,13 +1,12 @@
 randomize();
 
-global.current_game = "";
-global.game_type = "";
-global.timer = 5;
-global.new_game_starting = false;
-global.game_starting_timer = 3;
-win_condition_script = 0;
-global.win_condition_string = "";
-select_new_game = true;
-paused_surface = -1;
+current_game = "";
+new_game_starting = false;
+game_starting_timer = 3;
+win_condition_script = -1;
+win_condition_script_arg = -1;
+win_condition_string = "";
+timer = 10;
+global.player_control_script = "";
 
 room_goto(rGame);

@@ -24,6 +24,7 @@
     {"id":{"name":"sSpaceInvader2","path":"sprites/sSpaceInvader2/sSpaceInvader2.yy",},"order":2,},
     {"id":{"name":"rStart","path":"rooms/rStart/rStart.yy",},"order":0,},
     {"id":{"name":"rGameOver","path":"rooms/rGameOver/rGameOver.yy",},"order":2,},
+    {"id":{"name":"Utils","path":"scripts/Utils/Utils.yy",},"order":12,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
     {"id":{"name":"WinConditions","path":"scripts/WinConditions/WinConditions.yy",},"order":10,},
     {"id":{"name":"fHUDTitle","path":"fonts/fHUDTitle/fHUDTitle.yy",},"order":0,},

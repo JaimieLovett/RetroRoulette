@@ -1,6 +1,13 @@
 if (room = rGame) {
-	previous_room = current_game;
-	while (current_game = previous_room) {
+	if (array_length(global.previous_games) <= 2) {
+		array_push(global.previous_games, current_game);	
+	}
+	else {
+		array_delete(global.previous_games, 0, 1);
+		array_push(global.previous_games, current_game);
+	}
+	
+	while (array_value_exists(global.previous_games, current_game)) {
 		current_game = choose(
 			"asteroids_destroy",
 			"asteroids_survive",
@@ -65,7 +72,7 @@ if (room = rGame) {
 
 	// A new game is starting so deactivate all instances and set an alarm
 	// to start the game again after a set time.
-	new_game_starting = true;
+	global.new_game_starting = true;
 	instance_deactivate_all(true);
 	if (alarm[2] == -1) alarm[2] = room_speed * game_starting_timer;
 }

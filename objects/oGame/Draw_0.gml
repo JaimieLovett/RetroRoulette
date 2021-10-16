@@ -1,6 +1,6 @@
 switch(room) {
 	case rGame:	
-		if (new_game_starting) {
+		if (global.new_game_starting) {
 			draw_set_alpha(1);
 			draw_rectangle_colour(0, 0, room_width, room_height, c_black, c_black, c_black, c_black, false);
 			var c = c_yellow;

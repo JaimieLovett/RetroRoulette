@@ -1,20 +1,28 @@
 if alarm[0] == -1 alarm[0] = room_speed * move_delay;
 
-switch(times_moved_v) {
-	case 1:
-		move_delay = 0.4;
-		y_move = 20;
-		x_move = 3;
-		break;
-	case 2:
-		move_delay = 0.3;
-		y_move = 25;
-		break;
-	case 3:
-		move_delay = 0.2;
-		y_move = 30;
-		break;
-	case 4:
-		move_delay = 0.1;
-		break;
+if (can_shoot) {
+	can_shoot = false;
+	alarm[1] = room_speed * shoot_delay;
+	
+	if (chance(shoot_chance)) {
+		var _inst = instance_create_layer(x, y, "Enemies", oSpaceInvaderBullet);
+		_inst.direction = 270;
+		_inst.speed = 3;
+		
+		switch(sprite_index) {
+			case sSpaceInvader1:
+				_inst.sprite_index = sSpaceInvaderBullet1;
+				break;
+				
+			case sSpaceInvader2:
+				_inst.sprite_index = sSpaceInvaderBullet2;
+				break;
+				
+			case sSpaceInvader3:
+				_inst.sprite_index = sSpaceInvaderBullet3;
+				break;
+
+			default: break;
+		}
+	}
 }

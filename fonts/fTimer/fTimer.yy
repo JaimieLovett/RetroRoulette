@@ -9,7 +9,7 @@
   "bold": false,
   "italic": false,
   "charset": 0,
-  "AntiAlias": 1,
+  "AntiAlias": 0,
   "first": 0,
   "last": 0,
   "sampleText": "abcdef ABCDEF\n0123456789 .,<>\"'&!?\nthe quick brown fox jumps over the lazy dog\nTHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\nDefault character: ▯ (9647)",
@@ -116,7 +116,7 @@
     "124": {"x":83,"y":91,"w":10,"h":87,"character":124,"shift":15,"offset":0,},
     "125": {"x":56,"y":91,"w":25,"h":87,"character":125,"shift":30,"offset":0,},
     "126": {"x":857,"y":269,"w":50,"h":87,"character":126,"shift":55,"offset":0,},
-    "9647": {"x":909,"y":269,"w":24,"h":87,"character":9647,"shift":48,"offset":12,},
+    "9647": {"x":909,"y":269,"w":22,"h":87,"character":9647,"shift":48,"offset":13,},
   },
   "kerningPairs": [],
   "ranges": [

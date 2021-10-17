@@ -8,3 +8,7 @@ function array_value_exists(array, value) {
 	}
 	return _has_value;
 }
+
+function chance(percent) {
+  return percent > random(1);
+}

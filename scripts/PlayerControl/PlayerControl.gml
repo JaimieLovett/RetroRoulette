@@ -4,6 +4,20 @@ function player_control_asteroids() {
 	if (key_up) {
 		motion_add(image_angle, acceleration);
 		if speed > max_speed speed = max_speed;
+		
+		// Particle FX.
+		exhaust_counter++;
+	
+		if (exhaust_counter >= 4) {
+			exhaust_counter = 0;
+			var len = sprite_height * .4;
+			var _xx = x - lengthdir_x(len, image_angle);
+			var _yy = y - lengthdir_y(len, image_angle);
+		
+			with (oParticles) {
+				part_particles_create(part_system, _xx, _yy, part_type_exhaust, 1);
+			}
+		}
 	}
 	else {
 		if speed >= 0 speed -= deceleration;
@@ -12,7 +26,7 @@ function player_control_asteroids() {
 	if (key_space && can_shoot) {
 		can_shoot = false;
 		alarm[0] = room_speed * shoot_delay;
-		if (oGame.current_game == "asteroids_destroy") {
+		if (oGameMode.current_game == "asteroids_destroy") {
 			var _sep = 7;
             var _bullet_angle;
             var i = 0;
@@ -49,7 +63,7 @@ function player_control_space_invaders() {
 	if (key_space && can_shoot) {
 		can_shoot = false;
 		alarm[0] = room_speed * shoot_delay;
-		if (oGame.current_game == "space_invaders_destroy") {
+		if (oGameMode.current_game == "space_invaders_destroy") {
 			var _sep = 2;
             var _bullet_angle;
             var i = 30;
@@ -81,5 +95,4 @@ function player_control_pong() {
 	v_speed = lengthdir_y(input_magnitude * velocity, input_direction);
 	y += v_speed;
 	y = clamp(y, 0 + (sprite_height/2), camera_get_view_height(view_camera[0]) - (sprite_height/2));
-	
 }

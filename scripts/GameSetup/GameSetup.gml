@@ -7,7 +7,7 @@ function setup_asteroids_destroy(){
 		image_angle = 0;
 	}
 	
-	repeat(3) {
+	repeat(irandom_range(6, 10)) {
 		var xx = choose(
 			irandom_range(0, room_width*0.3),
 			irandom_range(room_width*0.7, room_width),
@@ -23,6 +23,7 @@ function setup_asteroids_destroy(){
 }
 
 function setup_asteroids_survive() {
+	shoot_chance = 0.1;
 	with (instance_create_layer(room_width / 2, room_height / 2, "Instances", oPlayer)) {
 		sprite_index = sPlayerAsteroids;	
 		speed = 0;
@@ -93,10 +94,19 @@ function setup_space_invaders_survive() {
 	
 	var _x = 25;
 	var _sep = room_width / 12;
+	
+	var _move_delay = 0.1;
+	var _x_move = 2;
+	var _y_move = 20;
+
+
 	repeat (11) {
 		with (instance_create_layer(_x, 20, "Enemies", oSpaceInvader)) {
 			sprite_index = sSpaceInvader1;
 			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
 		}
 		_x += _sep;
 	}
@@ -106,6 +116,9 @@ function setup_space_invaders_survive() {
 		with (instance_create_layer(_x, 70, "Enemies", oSpaceInvader)) {
 			sprite_index = sSpaceInvader2;
 			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
 		}
 		_x += _sep;
 	}
@@ -115,6 +128,9 @@ function setup_space_invaders_survive() {
 		with (instance_create_layer(_x, 120, "Enemies", oSpaceInvader)) {
 			sprite_index = sSpaceInvader2;
 			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
 		}
 		_x += _sep;
 	}
@@ -124,6 +140,9 @@ function setup_space_invaders_survive() {
 		with (instance_create_layer(_x, 170, "Enemies", oSpaceInvader)) {
 			sprite_index = sSpaceInvader3;
 			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
 		}
 		_x += _sep;
 	}
@@ -133,6 +152,9 @@ function setup_space_invaders_survive() {
 		with (instance_create_layer(_x, 220, "Enemies", oSpaceInvader)) {
 			sprite_index = sSpaceInvader3;
 			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
 		}
 		_x += _sep;
 	}
@@ -152,11 +174,15 @@ function setup_pong_score() {
 
 function setup_pong_goalkeeper() {
 	with (instance_create_layer(32, room_height / 2, "Instances", oPlayer)) {
-		sprite_index = sPlayerPong;
+		sprite_index = sPlayerPongLong;
 		speed = 0;
 		image_angle = 0;
 		velocity = 10;
 	}
+}
+
+function setup_breakout_survive() {
+		
 }
 
 #endregion

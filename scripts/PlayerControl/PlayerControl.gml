@@ -96,3 +96,27 @@ function player_control_pong() {
 	y += v_speed;
 	y = clamp(y, 0 + (sprite_height/2), camera_get_view_height(view_camera[0]) - (sprite_height/2));
 }
+
+function player_control_breakout_survive() {
+	input_direction = point_direction(0, 0, key_right - key_left, 0);
+	input_magnitude = (key_right - key_left != 0);
+	h_speed = lengthdir_x(input_magnitude * velocity, input_direction);
+	x += h_speed;
+	x = clamp(x, 0 + (sprite_width/2), camera_get_view_width(view_camera[0]) - (sprite_width/2));
+}
+
+function player_control_breakout_destroy() {
+	input_direction = point_direction(0, 0, key_right - key_left, 0);
+	input_magnitude = (key_right - key_left != 0);
+	h_speed = lengthdir_x(input_magnitude * velocity, input_direction);
+	x += h_speed;
+	x = clamp(x, 0 + (sprite_width/2), camera_get_view_width(view_camera[0]) - (sprite_width/2));
+	shoot_delay = 0.2;
+	
+	if (key_space && can_shoot) {
+		can_shoot = false;
+		alarm[0] = room_speed * shoot_delay;
+		var _inst = instance_create_layer(x, y, "Bullets", oBreakoutBall);
+		_inst.direction = image_angle;
+	}
+}

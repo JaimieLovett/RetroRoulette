@@ -9,7 +9,6 @@ part_type_direction(part_type_asteroid_debris, 0, 359, 0, false);
 part_type_orientation(part_type_asteroid_debris, 0, 359, 1, false, false);
 part_type_speed(part_type_asteroid_debris, 2, 2.4, -0.02, 0);
 
-
 // Space Invader Debris
 part_type_space_invader_1_debris = part_type_create();
 part_type_sprite(part_type_space_invader_1_debris, sSpaceInvader1Debris, false, false, true);
@@ -113,8 +112,7 @@ part_type_life(part_type_exhaust, 20, 20);
 part_type_pong_ball_trail = part_type_create();
 part_type_sprite(part_type_pong_ball_trail, sPongBallTrail, false, false, false);
 part_type_size(part_type_pong_ball_trail, .7, .7, 0.05, 0);
-part_type_color3(part_type_pong_ball_trail, c_white, c_ltgray, c_gray);
-part_type_alpha3(part_type_pong_ball_trail, 0.3, 0.3, 0);
+part_type_alpha3(part_type_pong_ball_trail, 0.2, 0.2, 0);
 part_type_life(part_type_pong_ball_trail, 20, 20);
 
 part_type_pong_ball_1_trail = part_type_create();
@@ -158,3 +156,54 @@ part_type_direction(part_type_pong_enemy_paddle_debris, 230, 300, 0, false);
 part_type_orientation(part_type_pong_enemy_paddle_debris, 0, 359, 1, false, false);
 part_type_speed(part_type_pong_enemy_paddle_debris, 3, 8, -0.05, 0);
 part_type_gravity(part_type_pong_enemy_paddle_debris, 0.1, 270);
+
+// Breakout Brick Debris
+part_type_breakout_brick_debris = part_type_create();
+part_type_sprite(part_type_breakout_brick_debris, sBreakoutBrickDebris, false, false, true);
+part_type_size(part_type_breakout_brick_debris, .5, 1, 0, 0);
+part_type_life(part_type_breakout_brick_debris, 60, 80);
+part_type_alpha3(part_type_breakout_brick_debris, .3, .3, 0);
+part_type_direction(part_type_breakout_brick_debris, 230, 300, 0, false);
+part_type_orientation(part_type_breakout_brick_debris, 0, 359, 1, false, false);
+part_type_speed(part_type_breakout_brick_debris, 3, 8, -0.05, 0);
+part_type_gravity(part_type_breakout_brick_debris, 0.1, 270);
+
+part_type_breakout_brick_1_debris = part_type_create();
+part_type_sprite(part_type_breakout_brick_1_debris, sBreakoutBrick1Debris, false, false, true);
+part_type_size(part_type_breakout_brick_1_debris, .5, 1, 0, 0);
+part_type_life(part_type_breakout_brick_1_debris, 60, 80);
+part_type_alpha3(part_type_breakout_brick_1_debris, .3, .3, 0);
+part_type_direction(part_type_breakout_brick_1_debris, 230, 300, 0, false);
+part_type_orientation(part_type_breakout_brick_1_debris, 0, 359, 1, false, false);
+part_type_speed(part_type_breakout_brick_1_debris, 3, 8, -0.05, 0);
+part_type_gravity(part_type_breakout_brick_1_debris, 0.1, 270);
+
+part_type_breakout_brick_2_debris = part_type_create();
+part_type_sprite(part_type_breakout_brick_2_debris, sBreakoutBrick2Debris, false, false, true);
+part_type_size(part_type_breakout_brick_2_debris, .5, 1, 0, 0);
+part_type_life(part_type_breakout_brick_2_debris, 60, 80);
+part_type_alpha3(part_type_breakout_brick_2_debris, .3, .3, 0);
+part_type_direction(part_type_breakout_brick_2_debris, 230, 300, 0, false);
+part_type_orientation(part_type_breakout_brick_2_debris, 0, 359, 1, false, false);
+part_type_speed(part_type_breakout_brick_2_debris, 3, 8, -0.05, 0);
+part_type_gravity(part_type_breakout_brick_2_debris, 0.1, 270);
+
+part_type_breakout_brick_3_debris = part_type_create();
+part_type_sprite(part_type_breakout_brick_3_debris, sBreakoutBrick3Debris, false, false, true);
+part_type_size(part_type_breakout_brick_3_debris, .5, 1, 0, 0);
+part_type_life(part_type_breakout_brick_3_debris, 60, 80);
+part_type_alpha3(part_type_breakout_brick_3_debris, .3, .3, 0);
+part_type_direction(part_type_breakout_brick_3_debris, 230, 300, 0, false);
+part_type_orientation(part_type_breakout_brick_3_debris, 0, 359, 1, false, false);
+part_type_speed(part_type_breakout_brick_3_debris, 3, 8, -0.05, 0);
+part_type_gravity(part_type_breakout_brick_3_debris, 0.1, 270);
+
+part_type_breakout_brick_4_debris = part_type_create();
+part_type_sprite(part_type_breakout_brick_4_debris, sBreakoutBrick4Debris, false, false, true);
+part_type_size(part_type_breakout_brick_4_debris, .5, 1, 0, 0);
+part_type_life(part_type_breakout_brick_4_debris, 60, 80);
+part_type_alpha3(part_type_breakout_brick_4_debris, .3, .3, 0);
+part_type_direction(part_type_breakout_brick_4_debris, 230, 300, 0, false);
+part_type_orientation(part_type_breakout_brick_4_debris, 0, 359, 1, false, false);
+part_type_speed(part_type_breakout_brick_4_debris, 3, 8, -0.05, 0);
+part_type_gravity(part_type_breakout_brick_4_debris, 0.1, 270);

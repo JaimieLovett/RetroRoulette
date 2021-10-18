@@ -182,7 +182,59 @@ function setup_pong_goalkeeper() {
 }
 
 function setup_breakout_survive() {
-		
+	with (instance_create_layer((room_width/2) - (sprite_width/2), room_height - 32, "Instances", oPlayer)) {
+		sprite_index = sPlayerBreakout;
+		speed = 0;
+		image_angle = 0;
+		velocity = 10;
+	}
+	
+	instance_create_layer((room_width/2) - (sprite_width/2), room_height/2, "Enemies", oBreakoutBall);	
+	
+	var _x = 100;
+	
+	repeat (13) {
+		with (instance_create_layer(_x, 100, "Enemies", oBreakoutBrick)) {
+			image_index = 0;
+		}
+		_x += 36;
+	}
+	
+	_x = 100;
+	repeat (13) {
+		with (instance_create_layer(_x, 115, "Enemies", oBreakoutBrick)) {
+			image_index = 1;
+		}
+		_x += 36;
+	}
+	
+	_x = 100;
+	repeat (13) {
+		with (instance_create_layer(_x, 130, "Enemies", oBreakoutBrick)) {
+			image_index = 2;
+		}
+		_x += 36;
+	}
+	
+	_x = 100;
+	repeat (13) {
+		with (instance_create_layer(_x, 145, "Enemies", oBreakoutBrick)) {
+			image_index = 3;
+		}
+		_x += 36;
+	}
+	
+	_x = 100;
+	repeat (13) {
+		with (instance_create_layer(_x, 160, "Enemies", oBreakoutBrick)) {
+			image_index = 4;
+		}
+		_x += 36;
+	}
+}
+
+function setup_breakout_destroy() {
+	setup_breakout_survive();	
 }
 
 #endregion

@@ -17,3 +17,8 @@ part_type_destroy(part_type_pong_ball_1_trail);
 part_type_destroy(part_type_pong_ball_2_trail);
 part_type_destroy(part_type_pong_ball_3_trail);
 part_type_destroy(part_type_pong_enemy_paddle_debris);
+part_type_destroy(part_type_breakout_brick_debris);
+part_type_destroy(part_type_breakout_brick_1_debris);
+part_type_destroy(part_type_breakout_brick_2_debris);
+part_type_destroy(part_type_breakout_brick_3_debris);
+part_type_destroy(part_type_breakout_brick_4_debris);

@@ -1,4 +1,4 @@
 randomize();
 global.previous_games[0] = -1;
 
-room_goto(rTest);
+room_goto(rGame);

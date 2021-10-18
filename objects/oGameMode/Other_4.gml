@@ -7,6 +7,8 @@ while (array_value_exists(global.previous_games, current_game )|| current_game =
 		"space_invaders_survive",
 		"pong_score",
 		"pong_goalkeeper",
+		"breakout_survive",
+		"breakout_destroy",
 	);
 }
 
@@ -68,6 +70,22 @@ switch(current_game) {
 		win_condition_script_arg = timer;
 		win_condition_string = "GOALKEEPER";
 		global.player_control_script = player_control_pong;
+		break;
+	case "breakout_survive":
+		setup_breakout_survive();
+		timer = 10;
+		win_condition_script = win_condition_timer;
+		win_condition_script_arg = timer;
+		win_condition_string = "SURVIVE";
+		global.player_control_script = player_control_breakout_survive;
+		break;
+	case "breakout_destroy":
+		setup_breakout_destroy();
+		timer = 10;
+		win_condition_script = win_condition_destroy;
+		win_condition_script_arg = oBreakoutBrick;
+		win_condition_string = "DESTROY";
+		global.player_control_script = player_control_breakout_destroy;
 		break;
 	default: break;	
 }

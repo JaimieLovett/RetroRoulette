@@ -182,13 +182,14 @@ function setup_pong_goalkeeper() {
 }
 
 function setup_breakout_survive() {
+	max_speed = 8;
+	
 	with (instance_create_layer((room_width/2) - (sprite_width/2), room_height - 32, "Instances", oPlayer)) {
 		sprite_index = sPlayerBreakout;
 		speed = 0;
 		image_angle = 0;
 		velocity = 10;
 	}
-	
 	instance_create_layer((room_width/2) - (sprite_width/2), room_height/2, "Enemies", oBreakoutBall);	
 	
 	var _x = 100;

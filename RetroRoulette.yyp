@@ -64,7 +64,7 @@
     {"id":{"name":"sPongBall2Debris","path":"sprites/sPongBall2Debris/sPongBall2Debris.yy",},"order":5,},
     {"id":{"name":"sBreakoutBrick3Debris","path":"sprites/sBreakoutBrick3Debris/sBreakoutBrick3Debris.yy",},"order":7,},
     {"id":{"name":"sPlayerAsteroids","path":"sprites/sPlayerAsteroids/sPlayerAsteroids.yy",},"order":0,},
-    {"id":{"name":"xyScale","path":"animcurves/xyScale/xyScale.yy",},"order":0,},
+    {"id":{"name":"animCurve","path":"animcurves/animCurve/animCurve.yy",},"order":0,},
     {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},"order":5,},
     {"id":{"name":"oBullet","path":"objects/oBullet/oBullet.yy",},"order":1,},
     {"id":{"name":"sPlayerPongLong","path":"sprites/sPlayerPongLong/sPlayerPongLong.yy",},"order":7,},

@@ -9,7 +9,7 @@ v_speed = choose(-5, 5);
 var _xx = x;
 var _yy = y;
 with (oParticles) {
-	part_particles_create(part_system, _xx, _yy, part_type_pong_paddle_debris, 100);
+	part_particles_create(part_system, _xx, _yy, part_type_smoke_effect, 5);
 }
 
 screenshake(30, 3, 0.2);

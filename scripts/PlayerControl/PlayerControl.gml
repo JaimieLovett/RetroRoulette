@@ -94,7 +94,7 @@ function player_control_pong() {
 	input_magnitude = (key_down - key_up != 0);
 	v_speed = lengthdir_y(input_magnitude * velocity, input_direction);
 	y += v_speed;
-	y = clamp(y, 0 + (sprite_height/2), camera_get_view_height(view_camera[0]) - (sprite_height/2));
+	y = clamp(y, 0 + (sprite_height/2) + (oWall.sprite_width/2), camera_get_view_height(view_camera[0]) - (sprite_height/2) - (oWall.sprite_width/2));
 }
 
 function player_control_breakout_survive() {
@@ -102,7 +102,7 @@ function player_control_breakout_survive() {
 	input_magnitude = (key_right - key_left != 0);
 	h_speed = lengthdir_x(input_magnitude * velocity, input_direction);
 	x += h_speed;
-	x = clamp(x, 0 + (sprite_width/2), camera_get_view_width(view_camera[0]) - (sprite_width/2));
+	x = clamp(x, 0 + (sprite_width/2) + (oWall.sprite_width/2), camera_get_view_width(view_camera[0]) - (sprite_width/2) - (oWall.sprite_width/2));
 }
 
 function player_control_breakout_destroy() {
@@ -110,7 +110,7 @@ function player_control_breakout_destroy() {
 	input_magnitude = (key_right - key_left != 0);
 	h_speed = lengthdir_x(input_magnitude * velocity, input_direction);
 	x += h_speed;
-	x = clamp(x, 0 + (sprite_width/2), camera_get_view_width(view_camera[0]) - (sprite_width/2));
+	x = clamp(x, 0 + (sprite_width/2) + (oWall.sprite_width/2), camera_get_view_width(view_camera[0]) - (sprite_width/2) - (oWall.sprite_width/2));
 	shoot_delay = 0.2;
 	
 	if (key_space && can_shoot) {

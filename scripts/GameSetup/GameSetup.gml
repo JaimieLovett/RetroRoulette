@@ -169,7 +169,19 @@ function setup_pong_score() {
 	}
 	
 	instance_create_layer(room_width - 32, room_height / 2, "Enemies", oPongPaddle);
-	instance_create_layer(room_width - 60, room_height / 2, "Enemies", oPongBall);	
+	instance_create_layer(room_width - 60, room_height / 2, "Enemies", oPongBall);
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		image_angle = 90;
+		x = 0 + (sprite_height / 2);
+		y = 0 + sprite_width / 2;
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		image_angle = 90;
+		x = 0 + (sprite_height / 2);
+		y = room_height - sprite_width / 2;
+	}
 }
 
 function setup_pong_goalkeeper() {
@@ -178,6 +190,18 @@ function setup_pong_goalkeeper() {
 		speed = 0;
 		image_angle = 0;
 		velocity = 10;
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		image_angle = 90;
+		x = 0 + (sprite_height / 2);
+		y = 0 + sprite_width / 2;
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		image_angle = 90;
+		x = 0 + (sprite_height / 2);
+		y = room_height - sprite_width / 2;
 	}
 }
 
@@ -190,6 +214,23 @@ function setup_breakout_survive() {
 		image_angle = 0;
 		velocity = 10;
 	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		x = 0 + (sprite_width/2);
+		y = 0 + (sprite_height/2);
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		x = room_width - (sprite_width/2);
+		y = 0 + (sprite_height / 2);
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		image_angle = 90;
+		x = 0 + (sprite_height / 2);
+		y = 0 + sprite_width / 2;
+	}
+	
 	instance_create_layer((room_width/2) - (sprite_width/2), room_height/2, "Enemies", oBreakoutBall);	
 	
 	var _x = 100;

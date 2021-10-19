@@ -136,16 +136,16 @@ part_type_color3(part_type_pong_ball_3_trail, c_yellow, c_orange, c_red);
 part_type_alpha3(part_type_pong_ball_3_trail, 0.4, 0.4, 0);
 part_type_life(part_type_pong_ball_3_trail, 20, 20);
 
-// Pong Paddle Collision
-part_type_pong_paddle_debris = part_type_create();
-part_type_sprite(part_type_pong_paddle_debris, sPongBallDebris, false, false, true);
-part_type_size(part_type_pong_paddle_debris, .5, 1, 0, 0);
-part_type_life(part_type_pong_paddle_debris, 60, 80);
-part_type_alpha3(part_type_pong_paddle_debris, .3, .3, 0);
-part_type_direction(part_type_pong_paddle_debris, 0, 359, 0, false);
-part_type_orientation(part_type_pong_paddle_debris, 0, 359, 1, false, false);
-part_type_speed(part_type_pong_paddle_debris, 3, 8, -0.05, 0);
-part_type_gravity(part_type_pong_paddle_debris, 0.1, 270);
+// Pong Ball Collision
+part_type_smoke_effect = part_type_create();
+part_type_sprite(part_type_smoke_effect, sPongBallDebris, false, false, true);
+part_type_size(part_type_smoke_effect, 1, 2, 0, 0);
+part_type_life(part_type_smoke_effect, 20, 40);
+part_type_color_mix(part_type_smoke_effect, c_white, c_grey);
+part_type_alpha3(part_type_smoke_effect, .3, .3, 0);
+part_type_direction(part_type_smoke_effect, 0, 359, 0, false);
+part_type_orientation(part_type_smoke_effect, 0, 359, 1, false, false);
+part_type_speed(part_type_smoke_effect, 1, 2, -0.05, 0);
 
 part_type_pong_enemy_paddle_debris = part_type_create();
 part_type_sprite(part_type_pong_enemy_paddle_debris, sPongBallDebris, false, false, true);

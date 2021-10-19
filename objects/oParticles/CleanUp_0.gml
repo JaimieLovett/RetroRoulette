@@ -11,7 +11,7 @@ part_type_destroy(part_type_pong_ball_3_debris);
 part_type_destroy(part_type_muzzle_flash_debris);
 part_type_destroy(part_type_bullet_debris);
 part_type_destroy(part_type_exhaust);
-part_type_destroy(part_type_pong_paddle_debris);
+part_type_destroy(part_type_smoke_effect);
 part_type_destroy(part_type_pong_ball_trail);
 part_type_destroy(part_type_pong_ball_1_trail);
 part_type_destroy(part_type_pong_ball_2_trail);

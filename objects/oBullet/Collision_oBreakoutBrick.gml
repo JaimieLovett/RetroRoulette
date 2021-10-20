@@ -1,6 +1,7 @@
 instance_destroy();
 
-with (other) event_perform(ev_other, ev_user0);
+// Destroy the brick
+instance_destroy(other);
 
 var _xx = x;
 var _yy = y;

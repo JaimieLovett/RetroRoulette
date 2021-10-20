@@ -5,10 +5,13 @@ while (array_value_exists(global.previous_games, current_game )|| current_game =
 		//"asteroids_survive",
 		//"space_invaders_destroy",
 		//"space_invaders_survive",
-		"pong_score",
-		"pong_goalkeeper",
-		"breakout_survive",
-		"breakout_destroy",
+		//"space_invaders_breakout",
+		"space_invaders_xxl",
+		//"pong_score",
+		//"pong_goalkeeper",
+		//"breakout_survive",
+		//"breakout_destroy",
+		//"breakout_invaders",
 	);
 }
 
@@ -55,6 +58,22 @@ switch(current_game) {
 		win_condition_string = "SURVIVE";
 		global.player_control_script = player_control_space_invaders;
 		break;
+	case "space_invaders_breakout":
+		setup_space_invaders_breakout();
+		timer = 10;
+		win_condition_script = win_condition_destroy;
+		win_condition_script_arg = oBreakoutBrick;
+		win_condition_string = "DESTROY";
+		global.player_control_script = player_control_space_invaders;
+		break;
+	case "space_invaders_xxl":
+		setup_space_invaders_xxl();
+		timer = 1000;
+		win_condition_script = win_condition_destroy;
+		win_condition_script_arg = oSpaceInvaderXXL;
+		win_condition_string = "DESTROY";
+		global.player_control_script = player_control_space_invaders;
+		break;
 	case "pong_score":
 		setup_pong_score();
 		timer = 30;
@@ -84,6 +103,14 @@ switch(current_game) {
 		timer = 10;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oBreakoutBrick;
+		win_condition_string = "DESTROY";
+		global.player_control_script = player_control_breakout_destroy;
+		break;
+	case "breakout_invaders":
+		setup_breakout_invaders();
+		timer = 10;
+		win_condition_script = win_condition_destroy;
+		win_condition_script_arg = oSpaceInvader;
 		win_condition_string = "DESTROY";
 		global.player_control_script = player_control_breakout_destroy;
 		break;

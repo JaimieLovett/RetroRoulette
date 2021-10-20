@@ -26,3 +26,5 @@ if (can_shoot) {
 		}
 	}
 }
+
+if (flash) flash--;

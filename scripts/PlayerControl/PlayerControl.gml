@@ -32,7 +32,7 @@ function player_control_asteroids() {
             var i = 0;
             
             repeat(8){
-				_bullet_angle = direction + (i * 45);
+				_bullet_angle = oPlayer.direction + (i * 45);
                 var _inst = instance_create_layer(
 					x + lengthdir_x(_sep, _bullet_angle),
 					y + lengthdir_y(_sep, _bullet_angle),
@@ -41,12 +41,14 @@ function player_control_asteroids() {
 				);
                 _inst.direction = _bullet_angle;
                 i++;
-            }	
+            }
+			screenshake(30, 3, 0.4);
 		}
 		else {
 			var _inst = instance_create_layer(x, y, "Bullets", oBullet);
 			_inst.direction = image_angle;
 		}
+		screenshake(10, 3, 0.4);
 	}
 	
 	// Wrap to the other side of the screen if we move off the screen.
@@ -63,29 +65,23 @@ function player_control_space_invaders() {
 	if (key_space && can_shoot) {
 		can_shoot = false;
 		alarm[0] = room_speed * shoot_delay;
-		if (oGameMode.current_game == "space_invaders_destroy") {
-			var _sep = 2;
-            var _bullet_angle;
-            var i = 30;
-            
-            repeat(3){
-				_bullet_angle = 30 + i;
-                var _inst = instance_create_layer(
-					x + lengthdir_x(_sep, _bullet_angle),
-					y + lengthdir_y(_sep, _bullet_angle),
-					"Bullets",
-					oBullet,
-				);
-                _inst.direction = _bullet_angle;
-				_inst.speed = 12;
-				i += 30;
-            }	
-		}
-		else {
-			var _inst = instance_create_layer(x, y, "Bullets", oBullet);
-			_inst.direction = 90;
+		var _sep = 2;
+        var _bullet_angle;
+        var i = 10;
+        
+        repeat(5){
+			_bullet_angle = 60 + i;
+            var _inst = instance_create_layer(
+				x + lengthdir_x(_sep, _bullet_angle),
+				y + lengthdir_y(_sep, _bullet_angle),
+				"Bullets",
+				oBullet,
+			);
+            _inst.direction = _bullet_angle;
 			_inst.speed = 12;
-		}
+			i += 10;
+        }
+		screenshake(30, 3, 0.4);
 	}
 }
 

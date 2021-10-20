@@ -36,7 +36,7 @@
     "path": "folders/Objects/SpaceInvaders.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oSpaceInvader",
+  "name": "oSpaceInvaderXXL",
   "tags": [],
   "resourceType": "GMObject",
 }

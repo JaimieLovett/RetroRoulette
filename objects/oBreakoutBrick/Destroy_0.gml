@@ -34,3 +34,5 @@ switch(image_index) {
 	
 	default: break;
 }
+
+screenshake(30, 2, 0.3);

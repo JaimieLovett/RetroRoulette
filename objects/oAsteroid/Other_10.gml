@@ -11,7 +11,7 @@ if sprite_index == sAsteroidLarge {
 		new_asteroid.sprite_index = sAsteroidMedium;
 	}
 	
-	screenshake(30, 3, 0.2);
+	screenshake(30, 4, 0.2);
 }
 else if sprite_index == sAsteroidMedium {
 	with (oParticles) {

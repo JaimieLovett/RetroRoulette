@@ -1,4 +1,4 @@
-h_speed = random_range(-10, -5)
+h_speed = random_range(-10, -8)
 v_speed = random_range(-5, 5);
 trail_counter = 0;
 image_speed = 0;

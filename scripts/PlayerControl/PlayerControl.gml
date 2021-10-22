@@ -47,8 +47,8 @@ function player_control_asteroids() {
 		else {
 			var _inst = instance_create_layer(x, y, "Bullets", oBullet);
 			_inst.direction = image_angle;
+			screenshake(30, 1, 0.4);
 		}
-		screenshake(10, 3, 0.4);
 	}
 	
 	// Wrap to the other side of the screen if we move off the screen.
@@ -104,15 +104,15 @@ function player_control_breakout_survive() {
 function player_control_breakout_destroy() {
 	input_direction = point_direction(0, 0, key_right - key_left, 0);
 	input_magnitude = (key_right - key_left != 0);
-	h_speed = lengthdir_x(input_magnitude * velocity, input_direction);
-	x += h_speed;
+	hori_speed = lengthdir_x(input_magnitude * velocity, input_direction);
+	x += hori_speed;
 	x = clamp(x, 0 + (sprite_width/2) + (oWall.sprite_width/2), camera_get_view_width(view_camera[0]) - (sprite_width/2) - (oWall.sprite_width/2));
 	shoot_delay = 0.2;
 	
 	if (key_space && can_shoot) {
 		can_shoot = false;
 		alarm[0] = room_speed * shoot_delay;
-		var _inst = instance_create_layer(x, y, "Bullets", oBreakoutBall);
-		_inst.direction = image_angle;
+		instance_create_layer(x, y - 20, "Bullets", oBreakoutBall);
+		screenshake(30, 1, 0.4);
 	}
 }

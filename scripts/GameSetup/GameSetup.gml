@@ -54,8 +54,10 @@ function setup_space_invaders_xxl() {
 		shoot_delay = 0.2;
 	}
 	
-	with (instance_create_layer(25, 25, "Enemies", oSpaceInvaderXXL)) {
+	with (instance_create_layer(0, 0, "Enemies", oSpaceInvaderXXL)) {
 		sprite_index = sSpaceInvader1XXL;
+		x = (room_width/2) - (sprite_width/2);
+		y = 20 + (sprite_height/2);
 		right = true;
 	}
 }

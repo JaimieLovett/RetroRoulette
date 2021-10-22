@@ -23,4 +23,4 @@ switch(sprite_index) {
 	default: break;
 }
 
-screenshake(30, 2, 0.3);
+screenshake(30, 2, 0.4);

@@ -12,4 +12,4 @@ switch(sprite_index) {
 	default: break;
 }
 
-screenshake(60, 2, 0.3);
+screenshake(60, 8, 0.4);

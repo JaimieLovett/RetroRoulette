@@ -10,3 +10,5 @@ if (bbox_top < other.sprite_width) {
 
 other.image_index = 1;
 if other.alarm[0] == -1 other.alarm[0] = room_speed * 0.1;
+
+screenshake(30, 1, 0.5);

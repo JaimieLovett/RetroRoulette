@@ -1,17 +1,17 @@
 // Loop until the current selected game is not one of the previous games we played.
 while (array_value_exists(global.previous_games, current_game )|| current_game == "") {
 	current_game = choose(
-		//"asteroids_destroy",
-		//"asteroids_survive",
-		//"space_invaders_destroy",
-		//"space_invaders_survive",
-		//"space_invaders_breakout",
-		//"space_invaders_xxl",
-		//"pong_score",
-		//"pong_goalkeeper",
-		//"breakout_survive",
+		"asteroids_destroy",
+		"asteroids_survive",
+		"space_invaders_destroy",
+		"space_invaders_survive",
+		"space_invaders_breakout",
+		"space_invaders_xxl",
+		"pong_score",
+		"pong_goalkeeper",
+		"breakout_survive",
 		"breakout_destroy",
-		//"breakout_invaders",
+		"breakout_invaders",
 	);
 }
 

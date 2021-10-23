@@ -1,3 +1,8 @@
+did_collide = true;
+
+// Make the ball change sprites
+image_index = 1;
+
 if (bbox_left < 0 + other.sprite_width || bbox_right > room_width - other.sprite_width) {
 	x = clamp(x, 0+sprite_xoffset, room_width-sprite_xoffset);
 	h_speed *= -1;

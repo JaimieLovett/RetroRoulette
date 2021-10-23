@@ -27,7 +27,7 @@ function player_control_asteroids() {
 		can_shoot = false;
 		alarm[0] = room_speed * shoot_delay;
 		if (oGameMode.current_game == "asteroids_destroy") {
-			var _sep = (sprite_height/2) + 20;
+			var _sep = (sprite_height/2) + 10;
             var _bullet_angle;
             var i = 0;
             

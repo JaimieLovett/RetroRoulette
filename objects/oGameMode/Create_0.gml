@@ -1,6 +1,6 @@
 current_game = "";
-new_game_starting = false;
-game_starting_timer = 3;
+global.new_game_starting = false;
+game_starting_timer = 30;
 win_condition_script = -1;
 win_condition_script_arg = -1;
 win_condition_string = "";

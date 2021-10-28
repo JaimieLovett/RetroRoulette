@@ -1,4 +1,5 @@
 did_collide = true;
+screen_freeze(global.screen_freeze_duration);
 
 // Make the ball change sprites
 image_index = 4;

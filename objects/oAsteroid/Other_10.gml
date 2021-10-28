@@ -1,3 +1,5 @@
+screen_freeze(global.screen_freeze_duration);
+
 var _xx = x;
 var _yy = y;
 

@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sPlayerAsteroids",
+    "path": "sprites/sPlayerAsteroids/sPlayerAsteroids.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

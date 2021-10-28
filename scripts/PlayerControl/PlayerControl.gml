@@ -45,7 +45,8 @@ function player_control_asteroids() {
 			screenshake(30, 3, 0.4);
 		}
 		else {
-			var _inst = instance_create_layer(x, y, "Bullets", oBullet);
+			var _sep = (sprite_height/2) + 10;
+			var _inst = instance_create_layer(x + lengthdir_x(_sep, image_angle), y + lengthdir_y(_sep, image_angle), "Bullets", oBullet);
 			_inst.direction = image_angle;
 			screenshake(30, 1, 0.4);
 		}

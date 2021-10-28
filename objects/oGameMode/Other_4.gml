@@ -31,7 +31,7 @@ switch(current_game) {
 		timer = 10;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oAsteroid;
-		win_condition_string = "DESTROY";
+		win_condition_string = "DESTROY ALL ASTEROIDS";
 		global.player_control_script = player_control_asteroids;
 		break;
 	case "asteroids_survive":
@@ -47,7 +47,7 @@ switch(current_game) {
 		timer = 10;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oSpaceInvader;
-		win_condition_string = "DESTROY";
+		win_condition_string = "INVADERS MUST DIE";
 		global.player_control_script = player_control_space_invaders;
 		break;
 	case "space_invaders_survive":
@@ -55,7 +55,7 @@ switch(current_game) {
 		timer = 10;
 		win_condition_script = win_condition_timer;
 		win_condition_script_arg = timer;
-		win_condition_string = "SURVIVE";
+		win_condition_string = "SURVIVE THE INVASION";
 		global.player_control_script = player_control_space_invaders;
 		break;
 	case "space_invaders_breakout":
@@ -103,7 +103,7 @@ switch(current_game) {
 		timer = 10;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oBreakoutBrick;
-		win_condition_string = "DESTROY";
+		win_condition_string = "BROKEN TILES";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
 	case "breakout_invaders":
@@ -111,7 +111,7 @@ switch(current_game) {
 		timer = 10;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oSpaceInvader;
-		win_condition_string = "DESTROY";
+		win_condition_string = "INVADERS MUST DIE";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
 	default: break;	
@@ -119,6 +119,5 @@ switch(current_game) {
 
 // A new game is starting so deactivate all instances and set an alarm
 // to start the game again after a set time.
-new_game_starting = true;
-instance_deactivate_all(true);
+global.new_game_starting = true;
 if (alarm[2] == -1) alarm[2] = room_speed * game_starting_timer;

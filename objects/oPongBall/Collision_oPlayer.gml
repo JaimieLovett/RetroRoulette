@@ -7,7 +7,7 @@ image_index = 4;
 h_speed = random_range(10, 15);
 v_speed = choose(-5, 5);
 
-if (oGameMode.current_game = "pong_goalkeeper" && alarm[0] == -1) {
+if (global.current_game = "pong_goalkeeper" && alarm[0] == -1) {
 	alarm[0] = room_speed * 0.5;
 }
 

@@ -2,6 +2,7 @@
 
 switch(menu_index) {
 	case 0:
+		global.game_over = false;
 		room_goto(rGame);
 		break;
 		

@@ -27,6 +27,7 @@ function win_condition_pong_goalkeeper(_timer) {
 }
 
 function gameover() {
-	room_goto(rGameOver);
+	global.game_over = true;
+	global.slow_mo = true;
 	array_delete(global.previous_games, 0, 3);
 }

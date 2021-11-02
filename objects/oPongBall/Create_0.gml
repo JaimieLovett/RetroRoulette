@@ -8,7 +8,7 @@ did_collide = false;
 scale_curve = animcurve_get_channel(animCurve, "scale"); 
 percent = 0;
 
-if (oGameMode.current_game = "pong_goalkeeper") {
+if (global.current_game == "pong_goalkeeper") {
 	img_idx = choose(1, 2, 3);
 }
 

@@ -1,6 +1,6 @@
 trail_counter = 0;
 max_speed = 15;
-h_speed = choose(random_range(-10, -8), random_range(8, 10));
+h_speed = random_range(-10, 10);
 v_speed = random_range(-10, -8);
 
 did_collide = false;

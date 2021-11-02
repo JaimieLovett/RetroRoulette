@@ -112,7 +112,8 @@ part_type_life(part_type_exhaust, 20, 20);
 part_type_pong_ball_trail = part_type_create();
 part_type_sprite(part_type_pong_ball_trail, sPongBallTrail, false, false, false);
 part_type_size(part_type_pong_ball_trail, .7, .7, 0.05, 0);
-part_type_alpha3(part_type_pong_ball_trail, 0.2, 0.2, 0);
+part_type_color3(part_type_pong_ball_trail, c_fuchsia, c_fuchsia, c_fuchsia);
+part_type_alpha3(part_type_pong_ball_trail, 0.4, 0.4, 0);
 part_type_life(part_type_pong_ball_trail, 20, 20);
 
 part_type_pong_ball_1_trail = part_type_create();
@@ -125,7 +126,7 @@ part_type_life(part_type_pong_ball_1_trail, 20, 20);
 part_type_pong_ball_2_trail = part_type_create();
 part_type_sprite(part_type_pong_ball_2_trail, sPongBallTrail, false, false, false);
 part_type_size(part_type_pong_ball_2_trail, .7, .7, 0.05, 0);
-part_type_color3(part_type_pong_ball_2_trail, c_orange, c_red, c_maroon);
+part_type_color3(part_type_pong_ball_2_trail, c_orange, c_maroon, c_red);
 part_type_alpha3(part_type_pong_ball_2_trail, 0.4, 0.4, 0);
 part_type_life(part_type_pong_ball_2_trail, 20, 20);
 

@@ -5,7 +5,7 @@ x_move = 25;
 image_speed = 0;
 
 can_shoot = true;
-shoot_delay = 0.5;
+shoot_delay = 1;
 shoot_chance = 1;
-hp = 200;
+hp = 100;
 flash = 0;

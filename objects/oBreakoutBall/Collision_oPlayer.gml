@@ -4,7 +4,7 @@ did_collide = true;
 image_index = 1;
 
 // Choose a random horizontal and vertical speed.
-h_speed = choose(random_range(-10, -8), random_range(8, 10));
+h_speed = random_range(-10, 10);
 v_speed = random_range(-10, -8);
 
 // Multiply our speed if we're not above max speed

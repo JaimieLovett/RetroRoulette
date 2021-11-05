@@ -1,4 +1,4 @@
-// Loop until the current selected game is not one of the previous games we played.
+#region Select game
 while (array_value_exists(global.previous_games, global.current_game )|| global.current_game == "") {
 	global.current_game = choose(
 		"asteroids_destroy",
@@ -30,8 +30,11 @@ else {
 	array_push(global.previous_games, global.current_game);
 }
 
+#endregion
+
 switch(global.current_game) {
 	case "asteroids_destroy":
+		#region Asteroids Destroy
 		setup_asteroids_destroy();
 		timer = 10;
 		win_condition_script = win_condition_destroy;
@@ -40,17 +43,22 @@ switch(global.current_game) {
 		game_description = "Destroy all Asteroids before\nthe timer reaches 0.";
 		global.player_control_script = player_control_asteroids;
 		break;
+		#endregion
+		
 	case "asteroids_survive":
+		#region Asteroids Survive
 		setup_asteroids_survive();
 		timer = 5;
 		win_condition_script = win_condition_timer;
 		win_condition_script_arg = timer;
 		game_title = "METEOR SHOWER";
 		game_description = "Avoid the Asteroids.\n Destroying them will cause many more to spawn.";
-		
 		global.player_control_script = player_control_asteroids;
 		break;
+		#endregion
+		
 	case "space_invaders_destroy":
+		#region Space Invaders Destroy
 		setup_space_invaders_destroy();
 		timer = 10;
 		win_condition_script = win_condition_destroy;
@@ -59,7 +67,10 @@ switch(global.current_game) {
 		game_description = "Destroy all Invaders before\nthe timer reaches 0.";
 		global.player_control_script = player_control_space_invaders;
 		break;
+		#endregion
+		
 	case "space_invaders_survive":
+		#region Space Invaders Survive
 		setup_space_invaders_survive();
 		timer = 10;
 		win_condition_script = win_condition_timer;
@@ -68,7 +79,10 @@ switch(global.current_game) {
 		game_description = "Avoid the Invader's bullets.";
 		global.player_control_script = player_control_space_invaders;
 		break;
+		#endregion
+		
 	case "space_invaders_breakout":
+		#region Space Invaders Breakout
 		setup_space_invaders_breakout();
 		timer = 10;
 		win_condition_script = win_condition_destroy;
@@ -77,7 +91,10 @@ switch(global.current_game) {
 		game_description = "Destroy all tiles before\nthe timer reaches 0.";
 		global.player_control_script = player_control_space_invaders;
 		break;
+		#endregion
+		
 	case "space_invaders_yellow_xxl":
+		#region Space Invaders Yellow XXL
 		setup_space_invaders_xxl(sSpaceInvader1XXL);
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
@@ -86,7 +103,10 @@ switch(global.current_game) {
 		game_description = "Destroy BIG OL' YELLOW.";
 		global.player_control_script = player_control_space_invaders;
 		break;
+		#endregion
+		
 	case "space_invaders_orange_xxl":
+		#region Space Invaders Orange XXL
 		setup_space_invaders_xxl(sSpaceInvader2XXL);
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
@@ -95,7 +115,10 @@ switch(global.current_game) {
 		game_description = "Destroy BIG OL' ORANGE.";
 		global.player_control_script = player_control_space_invaders;
 		break;
+		#endregion
+		
 	case "space_invaders_red_xxl":
+		#region Space Invaders Red XXL
 		setup_space_invaders_xxl(sSpaceInvader3XXL);
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
@@ -104,7 +127,10 @@ switch(global.current_game) {
 		game_description = "Destroy BIG OL' RED.";
 		global.player_control_script = player_control_space_invaders;
 		break;
+		#endregion
+		
 	case "pong_score":
+		#region Pong Score
 		setup_pong_score();
 		timer = 30;
 		win_condition_script = win_condition_pong_score;
@@ -113,7 +139,10 @@ switch(global.current_game) {
 		game_description = "Score a goal against the opponent before\nthe timer reaches 0.";
 		global.player_control_script = player_control_pong;
 		break;
+		#endregion
+		
 	case "pong_goalkeeper":
+		#region Pong Goalkeeper
 		setup_pong_goalkeeper();
 		timer = 10;
 		win_condition_script = win_condition_pong_goalkeeper;
@@ -122,7 +151,10 @@ switch(global.current_game) {
 		game_description = "Stop the balls going in the goal."
 		global.player_control_script = player_control_pong;
 		break;
+		#endregion
+		
 	case "breakout_survive":
+		#region Breakout Survive
 		setup_breakout_survive();
 		timer = 10;
 		win_condition_script = win_condition_timer;
@@ -131,7 +163,10 @@ switch(global.current_game) {
 		game_description = "Don't let the ball go out of play.";
 		global.player_control_script = player_control_breakout_survive;
 		break;
+		#endregion
+		
 	case "breakout_destroy":
+		#region Breakout Destroy
 		setup_breakout_destroy();
 		timer = 10;
 		win_condition_script = win_condition_destroy;
@@ -140,7 +175,10 @@ switch(global.current_game) {
 		game_description = "Destroy all tiles before\nthe timer reaches 0.";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
+		#endregion
+		
 	case "breakout_invaders":
+		#region Breakout Invaders
 		setup_breakout_invaders();
 		timer = 10;
 		win_condition_script = win_condition_destroy;
@@ -149,7 +187,10 @@ switch(global.current_game) {
 		game_description = "Destroy all Invaders before\nthe timer reaches 0.";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
+		#endregion
+		
 	case "breakout_invader_yellow_xxl":
+		#region Breakout Invader Yellow XXL
 		setup_breakout_invader_xxl(sSpaceInvader1XXL);
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
@@ -158,7 +199,10 @@ switch(global.current_game) {
 		game_description = "Destroy BIG OL' YELLOW.";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
+		#endregion
+		
 	case "breakout_invader_orange_xxl":
+		#region Breakout Invader Orange XXL
 		setup_breakout_invader_xxl(sSpaceInvader2XXL);
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
@@ -167,7 +211,10 @@ switch(global.current_game) {
 		game_description = "Destroy BIG OL' ORANGE.";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
+		#endregion
+		
 	case "breakout_invader_red_xxl":
+		#region Breakout Invader Red XXL
 		setup_breakout_invader_xxl(sSpaceInvader3XXL);
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
@@ -176,6 +223,8 @@ switch(global.current_game) {
 		game_description = "Destroy BIG OL' RED.";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
+		#endregion
+		
 	default: break;	
 }
 

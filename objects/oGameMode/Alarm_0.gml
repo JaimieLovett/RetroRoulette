@@ -1,1 +1,1 @@
-room_goto(rGame);
+global.win_game = true;

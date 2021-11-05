@@ -1,4 +1,5 @@
 if (global.slow_mo) time_speed = 0.1;
+else time_speed = 1;
 room_speed = round(60*time_speed);
 
 // If our game is past the starting stage, execute the win condition script.
@@ -13,6 +14,18 @@ if (!global.new_game_starting) {
 }
 
 if (global.game_over == true) {
+	if alarm[3] == -1 alarm[3] = 20;
 	global.game_over = false;
-	if alarm[3] == -1 alarm[3] = room_speed * 3;
+}
+
+if (global.win_game == true && win_game_count <= 1) {
+	var _xx = room_width / 2;
+	var _yy = room_height / 2;
+	with (oParticles) {
+		part_particles_create(part_system, _xx, _yy, part_type_confetti, 32);	
+		part_particles_create(part_system, _xx, _yy, part_type_more_confetti, 32);	
+	}
+	
+	if alarm[4] == -1 alarm[4] = room_speed * 3;
+	win_game_count++;
 }

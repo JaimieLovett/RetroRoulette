@@ -1,5 +1,16 @@
 part_system = part_system_create();
 
+// Player Debris
+part_type_player_debris = part_type_create();
+part_type_sprite(part_type_player_debris, sPlayerDebris, false, false, true);
+part_type_size(part_type_player_debris, .5, 1, 0, 0);
+part_type_life(part_type_player_debris, 60, 80);
+part_type_alpha3(part_type_player_debris, .3, .3, 0);
+part_type_direction(part_type_player_debris, 0, 359, 0, false);
+part_type_orientation(part_type_player_debris, 0, 359, 1, false, false);
+part_type_speed(part_type_player_debris, 7, 8, -0.05, 0);
+part_type_gravity(part_type_player_debris, 0.1, 270);
+
 // Asteroid Debris
 part_type_asteroid_debris = part_type_create();
 part_type_sprite(part_type_asteroid_debris, sAsteroidDebris, false, false, true);
@@ -208,3 +219,22 @@ part_type_direction(part_type_breakout_brick_4_debris, 230, 300, 0, false);
 part_type_orientation(part_type_breakout_brick_4_debris, 0, 359, 1, false, false);
 part_type_speed(part_type_breakout_brick_4_debris, 3, 8, -0.05, 0);
 part_type_gravity(part_type_breakout_brick_4_debris, 0.1, 270);
+
+// Confetti
+part_type_confetti = part_type_create();
+part_type_sprite(part_type_confetti, sConfetti, false, false, true);
+part_type_size(part_type_confetti, 0.2, 0.3, 0, 0);
+part_type_orientation(part_type_confetti, 0, 360, 0, 45, 0);
+part_type_gravity(part_type_confetti, 0.3, 270);
+part_type_direction(part_type_confetti, 0, 360, 0, 30);
+part_type_speed(part_type_confetti, 5, 6, -0.3, 0);
+part_type_life(part_type_confetti, 30, 60);
+
+part_type_more_confetti = part_type_create();
+part_type_sprite(part_type_more_confetti, sConfetti, false, false, true);
+part_type_size(part_type_more_confetti, 0.1, 0.2, 0, 0);
+part_type_speed(part_type_more_confetti, 7, 8, -0.3, 0);
+part_type_direction(part_type_more_confetti, 0, 360, 0, 30);
+part_type_gravity(part_type_more_confetti, 0.3, 270);
+part_type_orientation(part_type_more_confetti, 0, 360, 0, 30, 0);
+part_type_life(part_type_more_confetti, 20, 40);

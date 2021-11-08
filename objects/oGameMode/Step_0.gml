@@ -19,13 +19,18 @@ if (global.game_over == true) {
 }
 
 if (global.win_game == true && win_game_count <= 1) {
-	var _xx = room_width / 2;
-	var _yy = room_height / 2;
-	with (oParticles) {
-		part_particles_create(part_system, _xx, _yy, part_type_confetti, 32);	
-		part_particles_create(part_system, _xx, _yy, part_type_more_confetti, 32);	
+	instance_deactivate_object(oPlayer);
+	
+	repeat(30) {
+		var _xx = irandom_range(0, room_width);
+		var _yy = irandom_range(0, room_height);
+		
+		with (oParticles) {
+			part_particles_create(part_system, _xx, _yy, part_type_confetti, 32);	
+			part_particles_create(part_system, _xx, _yy, part_type_more_confetti, 32);	
+		}
 	}
 	
-	if alarm[4] == -1 alarm[4] = room_speed * 3;
+	if alarm[4] == -1 alarm[4] = room_speed * 1;
 	win_game_count++;
 }

@@ -1,3 +1,5 @@
+global.destroyed_space_invaders_xxl++;
+
 var _xx = x;
 var _yy = y;
 

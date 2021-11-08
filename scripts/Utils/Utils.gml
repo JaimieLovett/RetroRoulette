@@ -12,3 +12,12 @@ function array_value_exists(array, value) {
 function chance(percent) {
   return percent > random(1);
 }
+
+function reset_stats() {
+	global.destroyed_space_invaders = 0;
+	global.destroyed_asteroids = 0;
+	global.destroyed_breakout = 0;
+	global.destroyed_space_invaders_xxl = 0;
+	global.goals_scored = 0;
+	global.goals_defended = 0;	
+}

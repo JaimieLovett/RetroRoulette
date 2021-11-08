@@ -1,3 +1,5 @@
+global.destroyed_space_invaders++;
+
 screen_freeze(global.screen_freeze_duration);
 
 var _xx = x;

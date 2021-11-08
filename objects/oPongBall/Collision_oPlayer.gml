@@ -9,6 +9,7 @@ v_speed = choose(-5, 5);
 
 if (global.current_game = "pong_goalkeeper" && alarm[0] == -1) {
 	alarm[0] = room_speed * 0.5;
+	global.goals_defended++;
 }
 
 var _xx = x;

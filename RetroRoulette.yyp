@@ -105,6 +105,7 @@
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
     {"id":{"name":"WinConditions","path":"scripts/WinConditions/WinConditions.yy",},"order":10,},
     {"id":{"name":"oSpaceInvaderBullet","path":"objects/oSpaceInvaderBullet/oSpaceInvaderBullet.yy",},"order":1,},
+    {"id":{"name":"oScore","path":"objects/oScore/oScore.yy",},"order":6,},
     {"id":{"name":"oBreakoutBrick","path":"objects/oBreakoutBrick/oBreakoutBrick.yy",},"order":0,},
     {"id":{"name":"fHUDTitle","path":"fonts/fHUDTitle/fHUDTitle.yy",},"order":0,},
     {"id":{"name":"oSpaceInvaderXXL","path":"objects/oSpaceInvaderXXL/oSpaceInvaderXXL.yy",},"order":3,},

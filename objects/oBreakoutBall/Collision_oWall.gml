@@ -11,9 +11,6 @@ if (bbox_top < other.sprite_width) {
 	v_speed *= -1;
 }
 
-other.image_index = 1;
-if other.alarm[0] == -1 other.alarm[0] = room_speed * 0.1;
-
 // Spawn smoke particle effect
 var _xx = x;
 var _yy = y;

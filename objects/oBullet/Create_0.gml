@@ -11,3 +11,5 @@ var _yy = y;
 with (oParticles) {
 	part_particles_create(part_system, _xx, _yy, part_type_smoke_effect, 5);
 }
+
+global.bullets_fired = global.bullets_fired + 1;

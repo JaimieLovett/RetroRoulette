@@ -14,7 +14,7 @@ function win_condition_timer(_timer) {
 ///@desc Check if the player scored a goal, if it did, start a new game.
 function win_condition_pong_score() {
 	if (instance_exists(oPongBall) && oPongBall.x > room_width) {
-		global.goals_scored = global.goals_scored + 1;
+		global.goals_scored = global.goals_scored + 1 / room_speed;
 		global.win_game = true;
 	}
 	

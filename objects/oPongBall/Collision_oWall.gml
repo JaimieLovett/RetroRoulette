@@ -1,3 +1,5 @@
+did_collide = true;
+
 // Make the ball change sprites
 image_index = 4;
 

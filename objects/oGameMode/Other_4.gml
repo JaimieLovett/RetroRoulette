@@ -10,6 +10,7 @@ while (array_value_exists(global.previous_games, global.current_game )|| global.
 		"space_invaders_orange_xxl",
 		"space_invaders_red_xxl",
 		"pong_score",
+		"pong_score_xxl",
 		"pong_goalkeeper",
 		"breakout_survive",
 		"breakout_destroy",
@@ -136,6 +137,18 @@ switch(global.current_game) {
 		win_condition_script = win_condition_pong_score;
 		win_condition_script_arg = -1;
 		game_title = "GOAAAAL!";
+		game_description = "Score a goal against the opponent before\nthe timer reaches 0.";
+		global.player_control_script = player_control_pong;
+		break;
+		#endregion
+		
+	case "pong_score_xxl":
+		#region Pong Score XXL
+		setup_pong_score();
+		timer = 3000;
+		win_condition_script = win_condition_pong_score;
+		win_condition_script_arg = -1;
+		game_title = "GOAAAAL XXL!";
 		game_description = "Score a goal against the opponent before\nthe timer reaches 0.";
 		global.player_control_script = player_control_pong;
 		break;

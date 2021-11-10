@@ -312,7 +312,12 @@ function setup_pong_score() {
 		velocity = 10;
 	}
 	
-	instance_create_layer(room_width - 32, room_height / 2, "Enemies", oPongPaddle);
+	with (instance_create_layer(room_width - 32, room_height / 2, "Enemies", oPongPaddle)) {
+		if (global.current_game == "pong_score_xxl") {
+			sprite_index = sEnemyPongXXL;
+		}
+	}
+	
 	instance_create_layer(room_width - 60, room_height / 2, "Enemies", oPongBall);
 	
 	with (instance_create_layer(0, 0, "Enemies", oWall)) {

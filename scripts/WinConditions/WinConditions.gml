@@ -1,7 +1,7 @@
 ///@desc Check if all objects have been destroyed, if they have, start a new game.
 ///@arg Obj
 function win_condition_destroy(_obj) {
-	if (!instance_exists(_obj)) global.win_game = true;
+	if (!instance_exists(_obj)) win();
 	
 	if timer <= 0 && global.win_game == false gameover();
 }
@@ -15,7 +15,7 @@ function win_condition_timer(_timer) {
 function win_condition_pong_score() {
 	if (instance_exists(oPongBall) && oPongBall.x > room_width) {
 		global.goals_scored = global.goals_scored + 1 / room_speed;
-		global.win_game = true;
+		win();
 	}
 	
 	if timer <= 0 && global.win_game == false gameover();
@@ -37,4 +37,8 @@ function gameover() {
 		instance_destroy(oPlayer);
 		array_delete(global.previous_games, 0, 3);
 	}
+}
+
+function win() {
+	global.win_game = true;
 }

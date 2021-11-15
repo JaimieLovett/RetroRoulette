@@ -1,27 +1,37 @@
+if (global.win_game) {
+	draw_sprite(game_win_sprite, 0, room_width / 2, room_height / 2)
+}
+
 if (global.new_game_starting) {
+	// Draw a dark transparent rectangle that covers the screen.
+	draw_set_alpha(0.9);
+	var rectangle_c = c_black;
+	draw_rectangle_colour(0, 0, room_width, room_width, rectangle_c, rectangle_c, rectangle_c, rectangle_c, false);
+	
 	draw_set_alpha(1);
-	var c_r = c_navy;
-	draw_rectangle_colour(0, 50, room_width, 150, c_r, c_r, c_r, c_r, false);
-	draw_rectangle_colour(0, 250, room_width, 400, c_r, c_r, c_r, c_r, false);
-	var c = c_lime;
+	var description_c = c_lime;
 	draw_set_halign(fa_center);
 	draw_set_font(fHUDTitle);
-	draw_text_color(room_width / 2, 80, game_title, c, c, c, c, 1);
+	draw_sprite(game_title, 0, room_width / 2, 80);
 	draw_set_font(fHUDDescription);
-	draw_text_color(room_width / 2, 300, game_description, c, c, c, c, 1);
+	draw_text_color(room_width / 2, 160, game_description, description_c, description_c, description_c, description_c, 1);
 }
 else {
 	draw_set_alpha(1);
 	var c = c_white;
 	draw_set_halign(fa_center);
 	draw_set_font(fTimer);
-	draw_text_color(room_width / 2, (room_height / 2) - 50, timer, c, c, c, c, 0.1);
-}
-
-if (global.win_game) {
-	draw_set_alpha(1);
-	var c = c_lime;
-	draw_set_halign(fa_center);
-	draw_set_font(fHUDTitle);
-	draw_text_color(room_width / 2, (room_height / 2) - 50, "SUCCESS", c, c, c, c, 1);
+	
+	if (
+		global.current_game != "space_invaders_yellow_xxl" and
+		global.current_game != "space_invaders_orange_xxl" and
+		global.current_game != "space_invaders_red_xxl" and
+		global.current_game != "pong_score_xxl" and
+		global.current_game != "breakout_invader_yellow_xxl" and
+		global.current_game != "breakout_invader_orange_xxl" and
+		global.current_game != "breakout_invader_red_xxl"
+	) {
+		var _timer_alpha = clamp(frac(timer), 0.1, 0.5);
+		draw_text_color(room_width / 2, (room_height / 2) - 50, ceil(timer), c, c, c, c, _timer_alpha);
+	}
 }

@@ -1,1 +1,1 @@
-global.win_game = true;
+win();

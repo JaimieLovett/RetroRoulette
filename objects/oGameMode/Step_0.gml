@@ -31,6 +31,10 @@ if (global.win_game == true && win_game_count <= 1) {
 		}
 	}
 	
-	if alarm[4] == -1 alarm[4] = room_speed * 1;
+	with (oParticles) {
+		part_particles_create(part_system, room_width / 2, room_height / 2, part_type_win_debris, 500);
+	}
+	
+	if alarm[4] == -1 alarm[4] = room_speed * 1.5;
 	win_game_count++;
 }

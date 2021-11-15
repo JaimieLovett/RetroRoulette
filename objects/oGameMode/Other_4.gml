@@ -1,3 +1,5 @@
+game_win_sprite = choose(sLogoAmazing, sLogoFantastic, sLogoPerfect, sLogoSuccess);
+
 #region Select game
 while (array_value_exists(global.previous_games, global.current_game )|| global.current_game == "") {
 	global.current_game = choose(
@@ -6,18 +8,13 @@ while (array_value_exists(global.previous_games, global.current_game )|| global.
 		"space_invaders_destroy",
 		"space_invaders_survive",
 		"space_invaders_breakout",
-		"space_invaders_yellow_xxl",
-		"space_invaders_orange_xxl",
-		"space_invaders_red_xxl",
 		"pong_score",
-		"pong_score_xxl",
 		"pong_goalkeeper",
 		"breakout_survive",
 		"breakout_destroy",
 		"breakout_invaders",
-		"breakout_invader_yellow_xxl",
-		"breakout_invader_orange_xxl",
-		"breakout_invader_red_xxl",
+		"pong_score_xxl",
+		choose("space_invaders_yellow_xxl", "space_invaders_orange_xxl", "space_invaders_red_xxl", "breakout_invader_yellow_xxl", "breakout_invader_orange_xxl", "breakout_invader_red_xxl"),
 	);
 }
 
@@ -40,9 +37,9 @@ switch(global.current_game) {
 		timer = 10;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oAsteroid;
-		game_title = "POP ROCKS";
+		game_title = sLogoPopRocks;
 		game_description = "Destroy all Asteroids before\nthe timer reaches 0.";
-		global.player_control_script = player_control_asteroids;
+		global.player_control_script = choose(player_control_asteroids_destroy_3, player_control_asteroids_destroy_8);
 		break;
 		#endregion
 		
@@ -52,9 +49,9 @@ switch(global.current_game) {
 		timer = 5;
 		win_condition_script = win_condition_timer;
 		win_condition_script_arg = timer;
-		game_title = "METEOR SHOWER";
+		game_title = sLogoMeteorShower;
 		game_description = "Avoid the Asteroids.\n Destroying them will cause many more to spawn.";
-		global.player_control_script = player_control_asteroids;
+		global.player_control_script = player_control_asteroids_survive;
 		break;
 		#endregion
 		
@@ -64,7 +61,7 @@ switch(global.current_game) {
 		timer = 10;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oSpaceInvader;
-		game_title = "INVADERS MUST DIE";
+		game_title = sLogoInvadersMustDie;
 		game_description = "Destroy all Invaders before\nthe timer reaches 0.";
 		global.player_control_script = player_control_space_invaders;
 		break;
@@ -76,7 +73,7 @@ switch(global.current_game) {
 		timer = 10;
 		win_condition_script = win_condition_timer;
 		win_condition_script_arg = timer;
-		game_title = "SURVIVE THE INVASION";
+		game_title = sLogoSurviveTheInvasion;
 		game_description = "Avoid the Invader's bullets.";
 		global.player_control_script = player_control_space_invaders;
 		break;
@@ -88,7 +85,7 @@ switch(global.current_game) {
 		timer = 10;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oBreakoutBrick;
-		game_title = "TILES MUST DIE";
+		game_title = sLogoTilesMustDie;
 		game_description = "Destroy all tiles before\nthe timer reaches 0.";
 		global.player_control_script = player_control_space_invaders;
 		break;
@@ -100,8 +97,8 @@ switch(global.current_game) {
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oSpaceInvaderXXL;
-		game_title = "BIG OL' YELLOW";
-		game_description = "Destroy BIG OL' YELLOW.";
+		game_title = sLogoInvadersMustDie;
+		game_description = "Destroy the GIANT invader.";
 		global.player_control_script = player_control_space_invaders;
 		break;
 		#endregion
@@ -112,8 +109,8 @@ switch(global.current_game) {
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oSpaceInvaderXXL;
-		game_title = "BIG OL' ORANGE";
-		game_description = "Destroy BIG OL' ORANGE.";
+		game_title = sLogoInvadersMustDie;
+		game_description = "Destroy the GIANT invader.";
 		global.player_control_script = player_control_space_invaders;
 		break;
 		#endregion
@@ -124,8 +121,8 @@ switch(global.current_game) {
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oSpaceInvaderXXL;
-		game_title = "BIG OL' RED";
-		game_description = "Destroy BIG OL' RED.";
+		game_title = sLogoInvadersMustDie;
+		game_description = "Destroy the GIANT invader.";
 		global.player_control_script = player_control_space_invaders;
 		break;
 		#endregion
@@ -136,8 +133,8 @@ switch(global.current_game) {
 		timer = 30;
 		win_condition_script = win_condition_pong_score;
 		win_condition_script_arg = -1;
-		game_title = "GOAAAAL!";
-		game_description = "Score a goal against the opponent before\nthe timer reaches 0.";
+		game_title = sLogoGoal;
+		game_description = "Score a goal against the opponent before\nthe time runs out.";
 		global.player_control_script = player_control_pong;
 		break;
 		#endregion
@@ -148,7 +145,7 @@ switch(global.current_game) {
 		timer = 3000;
 		win_condition_script = win_condition_pong_score;
 		win_condition_script_arg = -1;
-		game_title = "GOAAAAL XXL!";
+		game_title = sLogoGoalXXL;
 		game_description = "Score a goal against the opponent before\nthe timer reaches 0.";
 		global.player_control_script = player_control_pong;
 		break;
@@ -160,7 +157,7 @@ switch(global.current_game) {
 		timer = 10;
 		win_condition_script = win_condition_pong_goalkeeper;
 		win_condition_script_arg = timer;
-		game_title = "GOALKEEPER";
+		game_title = sLogoGoalkeeper;
 		game_description = "Stop the balls going in the goal."
 		global.player_control_script = player_control_pong;
 		break;
@@ -172,7 +169,7 @@ switch(global.current_game) {
 		timer = 10;
 		win_condition_script = win_condition_timer;
 		win_condition_script_arg = timer;
-		game_title = "KEEPY UPPY";
+		game_title = sLogoKeepyUppy;
 		game_description = "Don't let the ball go out of play.";
 		global.player_control_script = player_control_breakout_survive;
 		break;
@@ -184,7 +181,7 @@ switch(global.current_game) {
 		timer = 10;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oBreakoutBrick;
-		game_title = "BROKEN TILES";
+		game_title = sLogoBrokenTiles;
 		game_description = "Destroy all tiles before\nthe timer reaches 0.";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
@@ -196,7 +193,7 @@ switch(global.current_game) {
 		timer = 10;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oSpaceInvader;
-		game_title = "BROKEN INVADERS";
+		game_title = sLogoBrokenInvaders;
 		game_description = "Destroy all Invaders before\nthe timer reaches 0.";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
@@ -208,8 +205,8 @@ switch(global.current_game) {
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oSpaceInvaderXXL;
-		game_title = "BIG OL' YELLOW";
-		game_description = "Destroy BIG OL' YELLOW.";
+		game_title = sLogoInvadersMustDie;
+		game_description = "Destroy the GIANT invader.";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
 		#endregion
@@ -220,8 +217,8 @@ switch(global.current_game) {
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oSpaceInvaderXXL;
-		game_title = "BIG OL' ORANGE";
-		game_description = "Destroy BIG OL' ORANGE.";
+		game_title = sLogoInvadersMustDie;
+		game_description = "Destroy the GIANT invader.";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
 		#endregion
@@ -232,8 +229,8 @@ switch(global.current_game) {
 		timer = 1000;
 		win_condition_script = win_condition_destroy;
 		win_condition_script_arg = oSpaceInvaderXXL;
-		game_title = "BIG OL' RED";
-		game_description = "Destroy BIG OL' RED.";
+		game_title =sLogoInvadersMustDie;
+		game_description = "Destroy the GIANT invader.";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
 		#endregion

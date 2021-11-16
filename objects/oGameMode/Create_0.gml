@@ -10,7 +10,5 @@ global.player_control_script = "";
 global.game_over = false;
 global.win_game = false;
 win_game_count = 0;
-time_speed = 1;
-global.slow_mo = false;
 
 game_win_sprite = choose(sLogoAmazing, sLogoFantastic, sLogoPerfect, sLogoSuccess);

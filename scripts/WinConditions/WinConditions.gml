@@ -30,11 +30,10 @@ function win_condition_pong_goalkeeper(_timer) {
 
 function gameover() {
 	if (global.win_game == false) {
-		instance_activate_layer("GameOverFilter");
 		global.game_over = true;
-		global.slow_mo = true;
 	
 		instance_destroy(oPlayer);
+		screenshake(30, 5, 0.5);
 		array_delete(global.previous_games, 0, 3);
 	}
 }

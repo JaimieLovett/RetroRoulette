@@ -1,3 +1,3 @@
 /// @desc Gameover
-global.slow_mo = false;
+global.filter_active = false;
 room_goto(rGameOver);

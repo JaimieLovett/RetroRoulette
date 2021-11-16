@@ -1,7 +1,3 @@
-if (global.slow_mo) time_speed = 0.1;
-else time_speed = 1;
-room_speed = round(60*time_speed);
-
 // If our game is past the starting stage, execute the win condition script.
 if (!global.new_game_starting) {
 	// If we have arguments for the win condition script, use them. Otherwise, just execute the win
@@ -14,7 +10,9 @@ if (!global.new_game_starting) {
 }
 
 if (global.game_over == true) {
-	if alarm[3] == -1 alarm[3] = 20;
+	if alarm[3] == -1 alarm[3] = room_speed * 2;
+	
+	global.filter_active = true;
 	global.game_over = false;
 }
 

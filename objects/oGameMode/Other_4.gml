@@ -241,4 +241,3 @@ switch(global.current_game) {
 // A new game is starting so deactivate all instances and set an alarm
 // to start the game again after a set time.
 global.new_game_starting = true;
-if (alarm[2] == -1) alarm[2] = room_speed * game_starting_timer;

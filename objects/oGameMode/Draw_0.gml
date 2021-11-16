@@ -15,6 +15,11 @@ if (global.new_game_starting) {
 	draw_sprite(game_title, 0, room_width / 2, 80);
 	draw_set_font(fHUDDescription);
 	draw_text_color(room_width / 2, 160, game_description, description_c, description_c, description_c, description_c, 1);
+	
+	draw_set_font(fPlay);
+	draw_set_halign(fa_center);
+	var play_again_text_c = c_lime;
+	draw_text_color(room_width / 2, 420, "Press ENTER to begin...", play_again_text_c, play_again_text_c, play_again_text_c, play_again_text_c, 1);
 }
 else {
 	draw_set_alpha(1);

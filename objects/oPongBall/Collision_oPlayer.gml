@@ -1,3 +1,4 @@
+can_collide = true;
 did_collide = true;
 screen_freeze(global.screen_freeze_duration);
 

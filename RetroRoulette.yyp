@@ -33,6 +33,7 @@
     {"id":{"name":"sLogoSurviveTheInvasion","path":"sprites/sLogoSurviveTheInvasion/sLogoSurviveTheInvasion.yy",},"order":8,},
     {"id":{"name":"sBullet","path":"sprites/sBullet/sBullet.yy",},"order":3,},
     {"id":{"name":"shd_UnderWater","path":"shaders/shd_UnderWater/shd_UnderWater.yy",},"order":7,},
+    {"id":{"name":"sndBallBounce","path":"sounds/sndBallBounce/sndBallBounce.yy",},"order":0,},
     {"id":{"name":"sAsteroidMedium","path":"sprites/sAsteroidMedium/sAsteroidMedium.yy",},"order":2,},
     {"id":{"name":"shd_large_blur_shader","path":"shaders/shd_large_blur_shader/shd_large_blur_shader.yy",},"order":4,},
     {"id":{"name":"sPongBallDebris","path":"sprites/sPongBallDebris/sPongBallDebris.yy",},"order":3,},
@@ -128,6 +129,7 @@
     {"id":{"name":"rStart","path":"rooms/rStart/rStart.yy",},"order":0,},
     {"id":{"name":"rGameOver","path":"rooms/rGameOver/rGameOver.yy",},"order":2,},
     {"id":{"name":"sSpaceInvader1Debris","path":"sprites/sSpaceInvader1Debris/sSpaceInvader1Debris.yy",},"order":7,},
+    {"id":{"name":"rSettings","path":"rooms/rSettings/rSettings.yy",},"order":4,},
     {"id":{"name":"sBreakoutBrick4Debris","path":"sprites/sBreakoutBrick4Debris/sBreakoutBrick4Debris.yy",},"order":3,},
     {"id":{"name":"Utils","path":"scripts/Utils/Utils.yy",},"order":12,},
     {"id":{"name":"FTF_EaseInElastic","path":"animcurves/FTF_EaseInElastic/FTF_EaseInElastic.yy",},"order":0,},
@@ -180,6 +182,7 @@
     {"roomId":{"name":"rGame","path":"rooms/rGame/rGame.yy",},},
     {"roomId":{"name":"rGameOver","path":"rooms/rGameOver/rGameOver.yy",},},
     {"roomId":{"name":"rTest","path":"rooms/rTest/rTest.yy",},},
+    {"roomId":{"name":"rSettings","path":"rooms/rSettings/rSettings.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

@@ -39,6 +39,7 @@ switch(global.current_game) {
 		win_condition_script_arg = oAsteroid;
 		game_title = sLogoPopRocks;
 		game_description = "Destroy all Asteroids before\nthe timer reaches 0.";
+		game_controls = "Accelerate - UP\nRotate - LEFT/RIGHT\nShoot: SPACEBAR";
 		global.player_control_script = choose(player_control_asteroids_destroy_3, player_control_asteroids_destroy_8);
 		break;
 		#endregion
@@ -51,6 +52,7 @@ switch(global.current_game) {
 		win_condition_script_arg = timer;
 		game_title = sLogoMeteorShower;
 		game_description = "Avoid the Asteroids.\n Destroying them will cause many more to spawn.";
+		game_controls = "Accelerate - UP\nRotate - LEFT/RIGHT\nShoot: SPACEBAR";
 		global.player_control_script = player_control_asteroids_survive;
 		break;
 		#endregion
@@ -63,6 +65,7 @@ switch(global.current_game) {
 		win_condition_script_arg = oSpaceInvader;
 		game_title = sLogoInvadersMustDie;
 		game_description = "Destroy all Invaders before\nthe timer reaches 0.";
+		game_controls = "Move - LEFT/RIGHT\nShoot: SPACEBAR";
 		global.player_control_script = player_control_space_invaders;
 		break;
 		#endregion
@@ -75,6 +78,7 @@ switch(global.current_game) {
 		win_condition_script_arg = timer;
 		game_title = sLogoSurviveTheInvasion;
 		game_description = "Avoid the Invader's bullets.";
+		game_controls = "Move - LEFT/RIGHT\nShoot: SPACEBAR";
 		global.player_control_script = player_control_space_invaders;
 		break;
 		#endregion
@@ -87,6 +91,7 @@ switch(global.current_game) {
 		win_condition_script_arg = oBreakoutBrick;
 		game_title = sLogoTilesMustDie;
 		game_description = "Destroy all tiles before\nthe timer reaches 0.";
+		game_controls = "Move - LEFT/RIGHT\nShoot: SPACEBAR";
 		global.player_control_script = player_control_space_invaders;
 		break;
 		#endregion
@@ -99,6 +104,7 @@ switch(global.current_game) {
 		win_condition_script_arg = oSpaceInvaderXXL;
 		game_title = sLogoInvadersMustDie;
 		game_description = "Destroy the GIANT invader.";
+		game_controls = "Move - LEFT/RIGHT\nShoot: SPACEBAR";
 		global.player_control_script = player_control_space_invaders;
 		break;
 		#endregion
@@ -111,6 +117,7 @@ switch(global.current_game) {
 		win_condition_script_arg = oSpaceInvaderXXL;
 		game_title = sLogoInvadersMustDie;
 		game_description = "Destroy the GIANT invader.";
+		game_controls = "Move - LEFT/RIGHT\nShoot: SPACEBAR";
 		global.player_control_script = player_control_space_invaders;
 		break;
 		#endregion
@@ -123,6 +130,7 @@ switch(global.current_game) {
 		win_condition_script_arg = oSpaceInvaderXXL;
 		game_title = sLogoInvadersMustDie;
 		game_description = "Destroy the GIANT invader.";
+		game_controls = "Move - LEFT/RIGHT\nShoot: SPACEBAR";
 		global.player_control_script = player_control_space_invaders;
 		break;
 		#endregion
@@ -135,6 +143,7 @@ switch(global.current_game) {
 		win_condition_script_arg = -1;
 		game_title = sLogoGoal;
 		game_description = "Score a goal against the opponent before\nthe time runs out.";
+		game_controls = "Move - UP/DOWN";
 		global.player_control_script = player_control_pong;
 		break;
 		#endregion
@@ -147,6 +156,7 @@ switch(global.current_game) {
 		win_condition_script_arg = -1;
 		game_title = sLogoGoalXXL;
 		game_description = "Score a goal against the opponent before\nthe timer reaches 0.";
+		game_controls = "Move - UP/DOWN";
 		global.player_control_script = player_control_pong;
 		break;
 		#endregion
@@ -159,6 +169,7 @@ switch(global.current_game) {
 		win_condition_script_arg = timer;
 		game_title = sLogoGoalkeeper;
 		game_description = "Stop the balls going in the goal."
+		game_controls = "Move - UP/DOWN";
 		global.player_control_script = player_control_pong;
 		break;
 		#endregion
@@ -171,6 +182,7 @@ switch(global.current_game) {
 		win_condition_script_arg = timer;
 		game_title = sLogoKeepyUppy;
 		game_description = "Don't let the ball go out of play.";
+		game_controls = "Move - LEFT/RIGHT";
 		global.player_control_script = player_control_breakout_survive;
 		break;
 		#endregion
@@ -183,6 +195,7 @@ switch(global.current_game) {
 		win_condition_script_arg = oBreakoutBrick;
 		game_title = sLogoBrokenTiles;
 		game_description = "Destroy all tiles before\nthe timer reaches 0.";
+		game_controls = "Move - LEFT/RIGHT\nShoot - SPACEBAR";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
 		#endregion
@@ -195,6 +208,7 @@ switch(global.current_game) {
 		win_condition_script_arg = oSpaceInvader;
 		game_title = sLogoBrokenInvaders;
 		game_description = "Destroy all Invaders before\nthe timer reaches 0.";
+			game_controls = "Move - LEFT/RIGHT\nShoot - SPACEBAR";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
 		#endregion
@@ -207,6 +221,7 @@ switch(global.current_game) {
 		win_condition_script_arg = oSpaceInvaderXXL;
 		game_title = sLogoInvadersMustDie;
 		game_description = "Destroy the GIANT invader.";
+		game_controls = "Move - LEFT/RIGHT\nShoot - SPACEBAR";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
 		#endregion
@@ -219,6 +234,7 @@ switch(global.current_game) {
 		win_condition_script_arg = oSpaceInvaderXXL;
 		game_title = sLogoInvadersMustDie;
 		game_description = "Destroy the GIANT invader.";
+		game_controls = "Move - LEFT/RIGHT\nShoot - SPACEBAR";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
 		#endregion
@@ -231,6 +247,7 @@ switch(global.current_game) {
 		win_condition_script_arg = oSpaceInvaderXXL;
 		game_title =sLogoInvadersMustDie;
 		game_description = "Destroy the GIANT invader.";
+		game_controls = "Move - LEFT/RIGHT\nShoot - SPACEBAR";
 		global.player_control_script = player_control_breakout_destroy;
 		break;
 		#endregion

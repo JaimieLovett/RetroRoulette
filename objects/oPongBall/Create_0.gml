@@ -1,3 +1,4 @@
+can_collide = true;
 h_speed = random_range(-10, -8)
 v_speed = random_range(-5, 5);
 trail_counter = 0;

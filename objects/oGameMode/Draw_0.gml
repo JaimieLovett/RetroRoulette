@@ -9,17 +9,20 @@ if (global.new_game_starting) {
 	draw_rectangle_colour(0, 0, room_width, room_width, rectangle_c, rectangle_c, rectangle_c, rectangle_c, false);
 	
 	draw_set_alpha(1);
-	var description_c = c_lime;
+	var description_c = c_white;
 	draw_set_halign(fa_center);
 	draw_set_font(fHUDTitle);
 	draw_sprite(game_title, 0, room_width / 2, 80);
 	draw_set_font(fHUDDescription);
 	draw_text_color(room_width / 2, 160, game_description, description_c, description_c, description_c, description_c, 1);
 	
+	draw_text_color(room_width / 2, 260, "Controls", description_c, description_c, description_c, description_c, 1);
+	draw_text_color(room_width / 2, 300, game_controls, description_c, description_c, description_c, description_c, 1);
+	
 	draw_set_font(fPlay);
 	draw_set_halign(fa_center);
-	var play_again_text_c = c_lime;
-	draw_text_color(room_width / 2, 420, "Press ENTER to begin...", play_again_text_c, play_again_text_c, play_again_text_c, play_again_text_c, 1);
+	var enter_c = c_lime;
+	draw_text_color(room_width / 2, 420, "Press ENTER to begin...", enter_c, enter_c, enter_c, enter_c, 1);
 }
 else {
 	draw_set_alpha(1);

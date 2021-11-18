@@ -1,3 +1,7 @@
+can_collide = true;
+collisionSnd = audio_play_sound(sndBallBounce, 1, false);
+audio_sound_pitch(collisionSnd, irandom_range(0.8, 1.2));
+
 did_collide = true;
 
 // Make the ball change sprites

@@ -1,4 +1,9 @@
 if (can_collide) {
+	var _sound = sndBallBounce;
+	audio_stop_sound(_sound);
+	audio_sound_pitch(_sound, random_range(0.8, 1.2));
+	audio_play_sound(_sound, 0, false);
+	
 	can_collide = false;
 	if (alarm[1] == -1) alarm[1] = room_speed * 0.1;did_collide = true;
 

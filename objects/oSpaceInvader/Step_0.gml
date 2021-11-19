@@ -3,9 +3,14 @@ if (!global.new_game_starting) {
 
 	if (can_shoot) {
 		can_shoot = false;
+		
 		alarm[1] = room_speed * shoot_delay;
 	
 		if (chance(shoot_chance)) {
+			var _sound = sndEnemyShoot;
+			audio_stop_sound(_sound);
+			audio_play_sound(_sound, 0, false);
+			
 			var _inst = instance_create_layer(x, y, "Enemies", oSpaceInvaderBullet);
 			_inst.direction = 270;
 			_inst.speed = 3;

@@ -40,3 +40,8 @@ switch(image_index) {
 }
 
 screenshake(30, 2, 0.3);
+
+var _sound = sndBrick;
+audio_stop_sound(_sound);
+audio_sound_pitch(_sound, random_range(0.8, 1.2));
+audio_play_sound(_sound, 0, false);

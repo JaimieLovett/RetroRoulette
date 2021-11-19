@@ -13,3 +13,7 @@ with (oParticles) {
 }
 
 global.bullets_fired = global.bullets_fired + 1;
+
+var _sound = sndShoot;
+audio_stop_sound(_sound);
+audio_play_sound(_sound, 0, false);

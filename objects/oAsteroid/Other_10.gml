@@ -1,4 +1,6 @@
 global.destroyed_asteroids++;
+var _sound = sndAsteroidExplosion;
+audio_play_sound(_sound, 0, false);
 
 screen_freeze(global.screen_freeze_duration);
 

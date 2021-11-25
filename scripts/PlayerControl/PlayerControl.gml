@@ -23,34 +23,83 @@ function player_control_asteroids() {
 		if speed >= 0 speed -= deceleration;
 	}
 	
+	// Wrap to the other side of the screen if we move off the screen.
+	move_wrap(true,true,sprite_width / 2);
+}
+
+function player_control_asteroids_survive() {
+	player_control_asteroids();
+	
 	if (key_space && can_shoot) {
 		can_shoot = false;
 		alarm[0] = room_speed * shoot_delay;
-		if (oGameMode.current_game == "asteroids_destroy") {
-			var _sep = 7;
-            var _bullet_angle;
-            var i = 0;
-            
-            repeat(8){
-				_bullet_angle = direction + (i * 45);
-                var _inst = instance_create_layer(
-					x + lengthdir_x(_sep, _bullet_angle),
-					y + lengthdir_y(_sep, _bullet_angle),
-					"Bullets",
-					oBullet,
-				);
-                _inst.direction = _bullet_angle;
-                i++;
-            }	
-		}
-		else {
-			var _inst = instance_create_layer(x, y, "Bullets", oBullet);
-			_inst.direction = image_angle;
-		}
+		var _sep = (sprite_height/2) + 10;
+		var _inst = instance_create_layer(x + lengthdir_x(_sep, image_angle), y + lengthdir_y(_sep, image_angle), "Bullets", oBullet);
+		_inst.direction = image_angle;
+		screenshake(30, 1, 0.4);
 	}
+}
+
+function player_control_asteroids_destroy_3() {
+	player_control_asteroids();
 	
-	// Wrap to the other side of the screen if we move off the screen.
-	move_wrap(true,true,sprite_width / 2);
+	if (key_space && can_shoot) {
+		can_shoot = false;
+		alarm[0] = room_speed * shoot_delay;
+		var _sep = (oPlayer.sprite_height/2) + 10;
+    
+		var _inst_1 = instance_create_layer(
+			x + lengthdir_x(_sep, image_angle),
+			y + lengthdir_y(_sep, image_angle),
+			"Bullets",
+			oBullet,
+		);
+	    _inst_1.direction = image_angle;
+	
+		var _inst_2 = instance_create_layer(
+			x + lengthdir_x(_sep, image_angle + 90),
+			y + lengthdir_y(_sep, image_angle + 90),
+			"Bullets",
+			oBullet,
+		);
+	    _inst_2.direction = image_angle;
+	
+	    var _inst_3 = instance_create_layer(
+			x + lengthdir_x(_sep, image_angle - 90),
+			y + lengthdir_y(_sep, image_angle - 90),
+			"Bullets",
+			oBullet,
+		);
+	    _inst_3.direction = image_angle;
+	
+		screenshake(30, 3, 0.4);
+	}
+}
+
+function player_control_asteroids_destroy_8() {
+	player_control_asteroids();
+	
+	if (key_space && can_shoot) {
+		can_shoot = false;
+		alarm[0] = room_speed * shoot_delay;
+	
+		var _sep = (oPlayer.sprite_height/2) + 10;
+		var _bullet_angle;
+		var i = 0;
+            
+	    repeat(8) {
+			_bullet_angle = image_angle + (i * 45);
+	        var _inst = instance_create_layer(
+				x + lengthdir_x(_sep, _bullet_angle),
+				y + lengthdir_y(_sep, _bullet_angle),
+				"Bullets",
+				oBullet,
+			);
+	        _inst.direction = _bullet_angle;
+	        i++;
+	    }
+		screenshake(30, 3, 0.4);
+	}
 }
 
 function player_control_space_invaders() {
@@ -63,29 +112,23 @@ function player_control_space_invaders() {
 	if (key_space && can_shoot) {
 		can_shoot = false;
 		alarm[0] = room_speed * shoot_delay;
-		if (oGameMode.current_game == "space_invaders_destroy") {
-			var _sep = 2;
-            var _bullet_angle;
-            var i = 30;
-            
-            repeat(3){
-				_bullet_angle = 30 + i;
-                var _inst = instance_create_layer(
-					x + lengthdir_x(_sep, _bullet_angle),
-					y + lengthdir_y(_sep, _bullet_angle),
-					"Bullets",
-					oBullet,
-				);
-                _inst.direction = _bullet_angle;
-				_inst.speed = 12;
-				i += 30;
-            }	
-		}
-		else {
-			var _inst = instance_create_layer(x, y, "Bullets", oBullet);
-			_inst.direction = 90;
+		var _sep = (sprite_height/2) + 20;
+        var _bullet_angle;
+        var i = 10;
+        
+        repeat(5){
+			_bullet_angle = 60 + i;
+            var _inst = instance_create_layer(
+				x + lengthdir_x(_sep, _bullet_angle),
+				y + lengthdir_y(_sep, _bullet_angle),
+				"Bullets",
+				oBullet,
+			);
+            _inst.direction = _bullet_angle;
 			_inst.speed = 12;
-		}
+			i += 10;
+        }
+		screenshake(30, 3, 0.4);
 	}
 }
 
@@ -108,15 +151,15 @@ function player_control_breakout_survive() {
 function player_control_breakout_destroy() {
 	input_direction = point_direction(0, 0, key_right - key_left, 0);
 	input_magnitude = (key_right - key_left != 0);
-	h_speed = lengthdir_x(input_magnitude * velocity, input_direction);
-	x += h_speed;
+	hori_speed = lengthdir_x(input_magnitude * velocity, input_direction);
+	x += hori_speed;
 	x = clamp(x, 0 + (sprite_width/2) + (oWall.sprite_width/2), camera_get_view_width(view_camera[0]) - (sprite_width/2) - (oWall.sprite_width/2));
 	shoot_delay = 0.2;
 	
 	if (key_space && can_shoot) {
 		can_shoot = false;
 		alarm[0] = room_speed * shoot_delay;
-		var _inst = instance_create_layer(x, y, "Bullets", oBreakoutBall);
-		_inst.direction = image_angle;
+		instance_create_layer(x, y - 20, "Bullets", oBreakoutBall);
+		screenshake(30, 1, 0.4);
 	}
 }

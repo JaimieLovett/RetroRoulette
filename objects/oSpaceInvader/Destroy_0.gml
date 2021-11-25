@@ -1,3 +1,12 @@
+global.destroyed_space_invaders++;
+
+var _sound = sndInvaderDeath;
+audio_stop_sound(_sound);
+audio_sound_pitch(_sound, random_range(0.8, 1.2));
+audio_play_sound(_sound, 0, false);
+
+screen_freeze(global.screen_freeze_duration);
+
 var _xx = x;
 var _yy = y;
 
@@ -23,4 +32,4 @@ switch(sprite_index) {
 	default: break;
 }
 
-screenshake(30, 2, 0.3);
+screenshake(30, 2, 0.4);

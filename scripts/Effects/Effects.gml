@@ -14,3 +14,10 @@ function screenshake(_time, _magnitude, _fade)
       shake_fade = _fade;
    }
 }
+
+function screen_freeze(freeze_duration){
+	var _time = current_time + freeze_duration;
+	while (current_time < _time) {
+		
+	}
+}

@@ -1,3 +1,7 @@
+global.destroyed_breakout++;
+
+screen_freeze(global.screen_freeze_duration);
+
 var _xx = x
 var _yy = y;
 
@@ -34,3 +38,9 @@ switch(image_index) {
 	
 	default: break;
 }
+
+screenshake(30, 2, 0.3);
+
+var _sound = sndInvaderDeath;
+audio_stop_sound(_sound);
+audio_play_sound(_sound, 0, false);

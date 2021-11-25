@@ -1,1 +1,1 @@
-room_goto(rGame);
+win();

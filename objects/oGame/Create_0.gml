@@ -1,4 +1,4 @@
 randomize();
 global.previous_games[0] = -1;
-
-room_goto(rGame);
+global.screen_freeze_duration = 15;
+room_goto(rStart);

@@ -1,3 +1,3 @@
-if (bbox_bottom > room_height && oGameMode.current_game == "breakout_survive") {
+if (bbox_bottom > room_height && global.current_game == "breakout_survive") {
 	gameover();	
 }

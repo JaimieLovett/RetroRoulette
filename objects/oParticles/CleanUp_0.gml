@@ -1,5 +1,6 @@
 part_system_destroy(part_system);
 
+part_type_destroy(part_type_player_debris);
 part_type_destroy(part_type_asteroid_debris);
 part_type_destroy(part_type_space_invader_1_debris);
 part_type_destroy(part_type_space_invader_2_debris);

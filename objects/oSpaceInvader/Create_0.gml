@@ -9,3 +9,5 @@ image_speed = 0;
 can_shoot = true;
 shoot_delay = 1;
 shoot_chance = 0.05;
+hp = 1;
+flash = 0;

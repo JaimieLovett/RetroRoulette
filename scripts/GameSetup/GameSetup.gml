@@ -23,7 +23,6 @@ function setup_asteroids_destroy(){
 }
 
 function setup_asteroids_survive() {
-	shoot_chance = 0.1;
 	with (instance_create_layer(room_width / 2, room_height / 2, "Instances", oPlayer)) {
 		sprite_index = sPlayerAsteroids;	
 		speed = 0;
@@ -45,6 +44,24 @@ function setup_asteroids_survive() {
 	}
 }
 
+
+function setup_space_invaders_xxl(spr) {
+	with (instance_create_layer(room_width / 2, room_height - 20, "Instances", oPlayer)) {
+		sprite_index = sPlayerSpaceInvaders;
+		speed = 0;
+		image_angle = 0;
+		velocity = 5;
+		shoot_delay = 0.2;
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oSpaceInvaderXXL)) {
+		sprite_index = spr;
+		x = (room_width/2) - (sprite_width/2);
+		y = 20 + (sprite_height/2);
+		right = true;
+	}
+}
+
 function setup_space_invaders_destroy() {
 	with (instance_create_layer(room_width / 2, room_height - 20, "Instances", oPlayer)) {
 		sprite_index = sPlayerSpaceInvaders;
@@ -54,45 +71,7 @@ function setup_space_invaders_destroy() {
 		shoot_delay = 0.2;
 	}
 	
-	var _x = 25;
-	var _sep = room_width / 12;
-	repeat (11) {
-		with (instance_create_layer(_x, 20, "Enemies", oSpaceInvader)) {
-			sprite_index = sSpaceInvader1;
-			right = true;
-		}
-		_x += _sep;
-	}
-	
-	_x = 25;
-	repeat (11) {
-		with (instance_create_layer(_x, 70, "Enemies", oSpaceInvader)) {
-			sprite_index = sSpaceInvader2;
-			right = true;
-		}
-		_x += _sep;
-	}
-		
-	_x = 25;
-	repeat (11) {
-		with (instance_create_layer(_x, 120, "Enemies", oSpaceInvader)) {
-			sprite_index = sSpaceInvader3;
-			right = true;
-		}
-		_x += _sep;
-	}
-}
-
-function setup_space_invaders_survive() {
-	with (instance_create_layer(room_width / 2, room_height - 20, "Instances", oPlayer)) {
-		sprite_index = sPlayerSpaceInvaders;
-		speed = 0;
-		image_angle = 0;
-		velocity = 5;
-		shoot_delay = 0.2;
-	}
-	
-	var _x = 25;
+	var _x = 40;
 	var _sep = room_width / 12;
 	
 	var _move_delay = 0.1;
@@ -111,7 +90,7 @@ function setup_space_invaders_survive() {
 		_x += _sep;
 	}
 	
-	_x = 25;
+	_x = 40;
 	repeat (11) {
 		with (instance_create_layer(_x, 70, "Enemies", oSpaceInvader)) {
 			sprite_index = sSpaceInvader2;
@@ -123,7 +102,7 @@ function setup_space_invaders_survive() {
 		_x += _sep;
 	}
 	
-	_x = 25;
+	_x = 40;
 	repeat (11) {
 		with (instance_create_layer(_x, 120, "Enemies", oSpaceInvader)) {
 			sprite_index = sSpaceInvader2;
@@ -135,7 +114,7 @@ function setup_space_invaders_survive() {
 		_x += _sep;
 	}
 	
-	_x = 25;
+	_x = 40;
 	repeat (11) {
 		with (instance_create_layer(_x, 170, "Enemies", oSpaceInvader)) {
 			sprite_index = sSpaceInvader3;
@@ -147,7 +126,7 @@ function setup_space_invaders_survive() {
 		_x += _sep;
 	}
 	
-	_x = 25;
+	_x = 40;
 	repeat (11) {
 		with (instance_create_layer(_x, 220, "Enemies", oSpaceInvader)) {
 			sprite_index = sSpaceInvader3;
@@ -160,6 +139,171 @@ function setup_space_invaders_survive() {
 	}
 }
 
+function setup_space_invaders_survive() {
+	with (instance_create_layer(room_width / 2, room_height - 20, "Instances", oPlayer)) {
+		sprite_index = sPlayerSpaceInvaders;
+		speed = 0;
+		image_angle = 0;
+		velocity = 5;
+		shoot_delay = 0.2;
+	}
+	
+	shoot_chance = 0.1;
+	
+	var _x = 40;
+	var _sep = room_width / 12;
+	
+	var _move_delay = 0.1;
+	var _x_move = 2;
+	var _y_move = 20;
+
+
+	repeat (11) {
+		with (instance_create_layer(_x, 20, "Enemies", oSpaceInvader)) {
+			sprite_index = sSpaceInvader1;
+			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
+		}
+		_x += _sep;
+	}
+
+	_x = 40;
+	repeat (11) {
+		with (instance_create_layer(_x, 60, "Enemies", oSpaceInvader)) {
+			sprite_index = sSpaceInvader1;
+			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
+		}
+		_x += _sep;
+	}
+	
+	_x = 40;
+	repeat (11) {
+		with (instance_create_layer(_x, 100, "Enemies", oSpaceInvader)) {
+			sprite_index = sSpaceInvader2;
+			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
+		}
+		_x += _sep;
+	}
+	
+	_x = 40;
+	repeat (11) {
+		with (instance_create_layer(_x, 140, "Enemies", oSpaceInvader)) {
+			sprite_index = sSpaceInvader2;
+			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
+		}
+		_x += _sep;
+	}
+
+	_x = 40;
+	repeat (11) {
+		with (instance_create_layer(_x, 180, "Enemies", oSpaceInvader)) {
+			sprite_index = sSpaceInvader2;
+			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
+		}
+		_x += _sep;
+	}
+
+	_x = 40;
+	repeat (11) {
+		with (instance_create_layer(_x, 220, "Enemies", oSpaceInvader)) {
+			sprite_index = sSpaceInvader3;
+			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
+		}
+		_x += _sep;
+	}
+	
+	_x = 40;
+	repeat (11) {
+		with (instance_create_layer(_x, 260, "Enemies", oSpaceInvader)) {
+			sprite_index = sSpaceInvader3;
+			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
+		}
+		_x += _sep;
+	}
+	
+	_x = 40;
+	repeat (11) {
+		with (instance_create_layer(_x, 300, "Enemies", oSpaceInvader)) {
+			sprite_index = sSpaceInvader3;
+			right = true;
+			move_delay = _move_delay;
+			x_move = _x_move;
+			y_move = _y_move;
+		}
+		_x += _sep;
+	}
+}
+
+function setup_space_invaders_breakout() {
+	with (instance_create_layer(room_width / 2, room_height - 20, "Instances", oPlayer)) {
+		sprite_index = sPlayerSpaceInvaders;
+		speed = 0;
+		image_angle = 0;
+		velocity = 5;
+		shoot_delay = 0.2;
+	}
+	
+	var _x = 100;
+	repeat (13) {
+		with (instance_create_layer(_x, 100, "Enemies", oBreakoutBrick)) {
+			image_index = 0;
+		}
+		_x += 36;
+	}
+	
+	_x = 100;
+	repeat (13) {
+		with (instance_create_layer(_x, 115, "Enemies", oBreakoutBrick)) {
+			image_index = 1;
+		}
+		_x += 36;
+	}
+	
+	_x = 100;
+	repeat (13) {
+		with (instance_create_layer(_x, 130, "Enemies", oBreakoutBrick)) {
+			image_index = 2;
+		}
+		_x += 36;
+	}
+	
+	_x = 100;
+	repeat (13) {
+		with (instance_create_layer(_x, 145, "Enemies", oBreakoutBrick)) {
+			image_index = 3;
+		}
+		_x += 36;
+	}
+	
+	_x = 100;
+	repeat (13) {
+		with (instance_create_layer(_x, 160, "Enemies", oBreakoutBrick)) {
+			image_index = 4;
+		}
+		_x += 36;
+	}
+}
+
 function setup_pong_score() {
 	with (instance_create_layer(32, room_height / 2, "Instances", oPlayer)) {
 		sprite_index = sPlayerPong;
@@ -168,7 +312,12 @@ function setup_pong_score() {
 		velocity = 10;
 	}
 	
-	instance_create_layer(room_width - 32, room_height / 2, "Enemies", oPongPaddle);
+	with (instance_create_layer(room_width - 32, room_height / 2, "Enemies", oPongPaddle)) {
+		if (global.current_game == "pong_score_xxl") {
+			sprite_index = sEnemyPongXXL;
+		}
+	}
+	
 	instance_create_layer(room_width - 60, room_height / 2, "Enemies", oPongBall);
 	
 	with (instance_create_layer(0, 0, "Enemies", oWall)) {
@@ -234,7 +383,6 @@ function setup_breakout_survive() {
 	instance_create_layer((room_width/2) - (sprite_width/2), room_height/2, "Enemies", oBreakoutBall);	
 	
 	var _x = 100;
-	
 	repeat (13) {
 		with (instance_create_layer(_x, 100, "Enemies", oBreakoutBrick)) {
 			image_index = 0;
@@ -277,6 +425,96 @@ function setup_breakout_survive() {
 
 function setup_breakout_destroy() {
 	setup_breakout_survive();	
+}
+
+function setup_breakout_invaders() {
+	max_speed = 8;
+	
+	with (instance_create_layer((room_width/2) - (sprite_width/2), room_height - 32, "Instances", oPlayer)) {
+		sprite_index = sPlayerBreakout;
+		speed = 0;
+		image_angle = 0;
+		velocity = 10;
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		x = 0 + (sprite_width/2);
+		y = 0 + (sprite_height/2);
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		x = room_width - (sprite_width/2);
+		y = 0 + (sprite_height / 2);
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		image_angle = 90;
+		x = 0 + (sprite_height / 2);
+		y = 0 + sprite_width / 2;
+	}
+	
+	var _x = 40;
+	var _sep = room_width / 12;
+	repeat (11) {
+		with (instance_create_layer(_x, 40, "Enemies", oSpaceInvader)) {
+			sprite_index = sSpaceInvader1;
+			right = true;
+		}
+		_x += _sep;
+	}
+	
+	_x = 40;
+	repeat (11) {
+		with (instance_create_layer(_x, 90, "Enemies", oSpaceInvader)) {
+			sprite_index = sSpaceInvader2;
+			right = true;
+		}
+		_x += _sep;
+	}
+		
+	_x = 40;
+	repeat (11) {
+		with (instance_create_layer(_x, 140, "Enemies", oSpaceInvader)) {
+			sprite_index = sSpaceInvader3;
+			right = true;
+		}
+		_x += _sep;
+	}
+}
+
+function setup_breakout_invader_xxl(spr) {
+	max_speed = 8;
+	
+	with (instance_create_layer((room_width/2) - (sprite_width/2), room_height - 32, "Instances", oPlayer)) {
+		sprite_index = sPlayerBreakout;
+		speed = 0;
+		image_angle = 0;
+		velocity = 10;
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		x = 0 + (sprite_width/2);
+		y = 0 + (sprite_height/2);
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		x = room_width - (sprite_width/2);
+		y = 0 + (sprite_height / 2);
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oWall)) {
+		image_angle = 90;
+		x = 0 + (sprite_height / 2);
+		y = 0 + sprite_width / 2;
+	}
+	
+	with (instance_create_layer(0, 0, "Enemies", oSpaceInvaderXXL)) {
+		sprite_index = spr;
+		x = (room_width/2) - (sprite_width/2);
+		y = 20 + (sprite_height/2);
+		hp = 2000;
+		right = true;
+	}
 }
 
 #endregion
